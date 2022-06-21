@@ -1,0 +1,291 @@
+
+.dialog-content {
+  position: absolute;
+  top: 76px;
+  bottom: 52px;
+  left: 20px;
+  right: 20px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.dialog-status-bar[state] + .dialog-content {
+  top: 104px;
+}
+
+.hidden {
+  display: none;
+}
+
+.dialog {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.3)  5px 8px;
+  overflow: hidden;
+  position: absolute;
+
+}
+
+.large-dialog {
+  max-height: 72%;
+  max-width: 55%;
+  min-height: 560px;
+  min-width: 760px;
+}
+
+.layout-column {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.layout-column {
+  flex-direction: column;
+}
+
+#processor-configuration {
+  position: absolute;
+  overflow: hidden;
+  width: 800px;
+  height: 450px;
+  font-size: 10px;
+  z-index: 1201;
+  display: none;
+
+}
+
+
+
+div.configuration-tab {
+  display: none;
+}
+
+
+div.settings-left  {
+  float: left;
+  width: 49%;
+}
+
+div.spacer  {
+  float: left;
+  width: 2%;
+}
+
+div.settings-right  {
+  float: left;
+  width: 49%;
+}
+
+.setting {
+  margin-bottom: 15px;
+}
+
+.setting-name {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding-bottom: 1px;
+  color: rgb(38, 38, 38);
+}
+
+.setting-field {
+  line-height: normal;
+  width: 100%;
+  color: rgb(119, 83, 81);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#processor-name-container {
+  height: 32px;
+}
+
+#processor-bundle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+div.penalty-duration-setting {
+  float: left;
+  width: 40%;
+}
+
+div.yield-duration-setting {
+  float: left;
+  width: 40%;
+}
+
+div.yield-duration-setting {
+  margin-left: 20%;
+}
+
+.clear {
+  clear: both;
+}
+
+div.bulletin-setting {
+  float: left;
+  width: 40%;
+}
+
+input {
+  vertical-align: baseline;
+}
+
+input {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input {
+  font-size: 100%;
+}
+
+input[type="text"] {
+  background-color: rgb(234, 238, 240);
+  border: 1px solid #eaeef0;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  padding: 0 10px 0 10px;
+  resize: none;
+  height: 32px;
+  width: 60%;
+  box-sizing: border-box;
+  color: rgb(38, 38, 38);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-repeat: initial;
+}
+
+#processor-name {
+  width: 70%;
+  float: left;
+}
+
+div.processor-enabled-container {
+  float: left;
+  margin-top: 8px;
+  margin-left: 10px;
+  width: 20%;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1;
+}
+
+.setting-name .fa  {
+  color: rgb(0, 72, 73);
+  margin-left: 5px;
+}
+
+.fa-question-circle:before {
+  content: "";
+}
+
+#auto-terminate-relationship-names {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px;
+  border-image-slice: initial;
+  border-image-repeat: initial;
+
+}
+
+div.nf-checkbox {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin-right: 4px;
+}
+
+
+
+#processor-enabled {
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin-right: 4px;
+}
+
+.nf-checkbox-label {
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+div.combo-button-normal {
+  background-color: rgb(234, 238, 240);
+}
+
+div.processor-relationship-container {
+  margin-bottom: 7px;
+}
+
+.combo-text {
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100% - 15px);
+  font-weight: normal;
+
+}
+
+.combo-arrow {
+  float: right;
+  width: 10px;
+  margin-top: 8px;
+}
+
+.setting-field .fa  {
+  color: rgb(0, 72, 73);
+  margin-left: 5px;
+}
+
+.fa-chevron-down:before {
+  content: "";
+}
+
+div.checkbox-unchecked {
+
+  background-position-x: left;
+  background-position-y: top;
+  background-size: initial;
+  background-attachment: scroll;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: transparent;
+}
+
+div.relationship-name  {
+  display: inline-block;
+  line-height: normal;
+}
+
+div.relationship-description {
+  color: rgb(136, 136, 136);
+  margin-left: 16px;
+  margin-top: 2px;
+}
+
+.setting {
+  margin-bottom: 10px;
+}
+::ng-deep .mat-form-field {
+  font-size: 12px; // example
+}

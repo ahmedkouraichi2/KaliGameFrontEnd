@@ -1,0 +1,42 @@
+
+<div class="dialog-header ">
+  <h2 mat-dialog-title class="dialog-header-text">Configuration du Connecteur</h2>
+</div>
+<mat-dialog-content class="mat-typography dialog-content " >
+<mat-tab-group class="tab-group" animationDuration="0ms" #matgroup >
+  <mat-tab label="Configuration" >
+    <div class="tab-content " >
+      <app-settings (name)="setSettingName($event)"  (etat)="setSettingStatus($event)" [type]="newProcessor.type" ></app-settings>
+    </div>
+  </mat-tab>
+  <mat-tab label="Planification">
+    <div class="tab-content">
+      <app-scheduling (tache)="setSchedulingTache($event)" ></app-scheduling>
+    </div>
+  </mat-tab>
+  <mat-tab label="Propriétés">
+    <div class="tab-content">
+      <app-properties (propriteValeurSuivre)="setValeurSuivre($event)" [type]="newProcessor.type" (url)="SetUrl($event)"
+      (deep)="setDeep($event)" (siteMap)="setSiteMap($event)" (filter)="setFilter($event)"
+      (inputDirectory)="setInputDirectory($event)" (filePath)="setFileFilter($event)"
+      (pathSize)="setPathSize($event)" (bathSize)="setBathZise($event)"
+      (subDirectorie)="setSubDirectorie($event)" (ignoreHiddenFiles)="setIgnoreHiddentFiles($event)"
+      (minimumFileAge)="setMinimumFileAge($event)" (maximumFileAge)="setMaximumFileAge($event)"
+      (minimumFileSize)="setMinumumFileSize($event)" (maximumFileSize)="setMaximumFileSize($event)"
+      (user)="setUser($event)" (Password)="setPassword($event)" (object)="setObject($event)" (fields)="setObject($event)" (clause)="setClause($event)"
+      ></app-properties>
+    </div>
+  </mat-tab>
+  <mat-tab label="Commentaires">
+    <div class="tab-content">
+      <app-comments (commentaire)="setCommentaire($event)"></app-comments>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+</mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!--<div class="dialog-buttons">-->
+    <button mat-button mat-dialog-close class="btn-style-cancel">Annuler</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn-style-add" (click)="addProcessor()">Ajouter</button>
+   <!-- </div>-->
+  </mat-dialog-actions>

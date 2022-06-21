@@ -1,0 +1,66 @@
+
+  <div class="configuration-tab processor-configuration-tabs-content snipcss-prFSQ snip-div" style="display: block;overflow-x:hidden;overflow-y: hidden;">
+    <div class="setting mt-3">
+      <div class="setting-name ">
+        Stratégie de planification
+        <div class="fa fa-question-circle" title="The amount of time used when this processor penalizes a FlowFile.">
+        </div>
+      </div>
+      <div class="setting-field m-0 b-0 mt-2 ">
+        <mat-form-field appearance="fill"  class="mat-form-field-appearance-fill"  style="width: 168px !important;">
+          <mat-select [(ngModel)]="selectedScheduling" name="scheduling" >
+            <mat-option *ngFor="let scheduling of schedulings" [value]="scheduling.value" >
+              {{scheduling.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="setting m-0 p-0">
+      <div class="penalty-duration-setting">
+        <div class="setting-name">
+          Taches simultanées
+          <div class="fa fa-question-circle" title="The amount of time used when this processor penalizes a FlowFile.">
+          </div>
+        </div>
+
+        <div class="setting-field m-0 b-0 mt-2">
+          <input type="text" [(ngModel)]="tacheScheduiling" (keyup)="sendScheduilingTache()" >
+        </div>
+      </div>
+      <div class="yield-duration-setting" style="margin-left: 4%;">
+        <div class="setting-name">
+          Programme d'exécution
+          <div class="fa fa-question-circle" title="When a processor yields, it will not be scheduled again until this amount of time elapses.">
+          </div>
+        </div>
+        <div class="setting-field m-0 b-0 mt-2">
+          <input type="text" id="yield-duration" name="yield-duration" class="">
+        </div>
+      </div>
+      <div class="clear">
+      </div>
+    </div>
+    <div class="setting">
+      <div class="bulletin-setting">
+        <div class="setting-name m-0 b-0 mt-4">
+          Exécution
+          <div class="fa fa-question-circle" title="The level at which this processor will generate bulletins.">
+          </div>
+        </div>
+        <div class="setting-field m-0 b-0 mt-2">
+          <mat-form-field appearance="fill"  style="width: 168px !important;">
+            <mat-select [(ngModel)]="selectedExecution" name="bulltin">
+              <mat-option *ngFor="let execution of executions" [value]="execution.value">
+                {{execution.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="clear">
+      </div>
+    </div>
+  </div>
+
+

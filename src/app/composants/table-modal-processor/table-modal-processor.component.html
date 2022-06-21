@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-end">
+  <mat-form-field class="px-16 " style="width: 40% ">
+    <input matInput #filter placeholder="Search..." autocomplete="off" style="width: 100% ">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+<table mat-table [dataSource]="processors | search: 'type':filter.value" class=" mat-elevation-z8 demo-table">
+  <!-- type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="dialog-header dialog-header-text">type</th>
+    <td mat-cell *matCellDef="let element" class="dialog-body-text no-selected-row">{{element.type}}</td>
+  </ng-container>
+
+  <!-- version Column -->
+  <ng-container matColumnDef="version">
+    <th mat-header-cell *matHeaderCellDef class="dialog-header dialog-header-text">version</th>
+    <td mat-cell *matCellDef="let element" class="dialog-body-text no-selected-row">{{element.version}}</td>
+  </ng-container>
+
+  <!-- tags Column -->
+  <ng-container matColumnDef="tags" >
+    <th mat-header-cell *matHeaderCellDef class="dialog-header dialog-header-text">tags</th>
+    <td mat-cell *matCellDef="let element" class="dialog-body-text no-selected-row">{{element.tags}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: displayedColumns;"
+      (click)="getQuestion(row)"
+      [ngClass]="{'selected-row' : row.selected }"
+  ></tr>
+
+</table>
+<app-modal-description
+  [processor]="selectedQuestion"
+  (changeQuestion)="changeQuestion($event)"
+  [highestIndex]="highestIndex"
+></app-modal-description>

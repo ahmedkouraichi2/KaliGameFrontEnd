@@ -1,0 +1,86 @@
+#login-contents-container {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+}
+.center-div {
+  margin: auto;
+  width: 100%;
+}
+.hidden {
+  display: block;
+}
+.login-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Montserrat";
+  margin-bottom: 20px;
+  color: rgb(114, 142, 155);
+}
+.setting {
+  margin-bottom: 15px;
+}
+.setting-name {
+  font-size: 15px;
+  font-family: "Roboto Slab" ;
+  font-weight: inherit;
+  text-transform: capitalize;
+  padding-bottom: 6px;
+  color: rgb(38, 38, 38);
+}
+.setting-field {
+  line-height: normal;
+  color: rgb(119, 83, 81);
+  font-size: 15px;
+
+}
+input:focus {
+  background-color: rgb(255, 255, 255);
+}
+input {
+  background-color: rgb(234, 238, 240);
+  border: 1px solid #eaeef0;
+  resize: none;
+  height: 32px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 100%;
+  width: 412px;
+  box-sizing: border-box;
+  color: rgb(38, 38, 38);
+}
+div.button {
+  height: 32px;
+  width: 90px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  text-align: center;
+  background: #728e9b;
+  color: rgb(255, 255, 255);
+}
+div.button:hover:not(.disabled-button) {
+  background-color: rgb(0, 72, 73);
+}
+.my-container{
+  margin-top: 40px;
+  max-width: 470px;
+
+}
+.my-title{
+  margin-top: 20px;
+}
+.link-danger {
+  color: rgb(114, 142, 155);
+}
+.link-danger:hover{
+  color: rgb(0, 72, 73);
+}
+.card-body{
+  background: #FCFCFC;
+  border-radius: 25px;
+  box-shadow: 13px 13px 20px #e6e9ed, -13px -13px 20px #fff;
+}
+.card{
+  border-radius: 25px;
+}

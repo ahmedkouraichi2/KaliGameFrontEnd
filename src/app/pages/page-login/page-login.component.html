@@ -1,0 +1,112 @@
+
+<!--
+  <div class="row" style="height: 100%">
+-->
+    <div class="col "  >
+
+        <div class="card-body  " >
+     <!--     <div class="card " style="border:1px solid;height: 70%; width: 70%; border-radius: 50px">
+            <div class="login-title card pt-2" style="background: #2b2bb2; border-top-left-radius:50px; border-top-right-radius: 50px;height: 15% ">
+              Sign in to your account
+            </div>
+            <div class="setting">
+              <form [formGroup]="registrationForm" class="mx-auto" >
+                <div class="form-group">
+                  <div class="input-group" style="width: 80%">
+                   &lt;!&ndash; <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="example@mail.com" formControlName="email"/>&ndash;&gt;
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>email</mat-label>
+                      <input matInput placeholder="Ex. Pizza" value="Sushi">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group" style="width: 80%">
+                    &lt;!&ndash; Change input type to be able to accept dynamic data &ndash;&gt;
+                    <div class="input-group-append" >
+
+                        <span class="input-group-text">
+                          <i class="fa" [ngClass]="{'fa-eye-slash': !fieldTextType,'fa-eye': fieldTextType }" (click)="toggleFieldTextType()"></i>
+                        </span>
+                    </div>
+                    <input [type]="fieldTextType ? 'text' : 'password'" class="form-control" formControlName="password" placeholder="Password"/>
+                  </div>
+                </div >
+                <div class="d-flex justify-content-between">
+                <a [routerLink]="['/accounts/emailsignup']" class="link-danger ps-2">Remembrer me</a>
+                <a [routerLink]="['/accounts/emailsignup']" class="link-danger pe-2">Forgot password </a>
+                </div>
+                <div class="button ">
+                  Sign In
+                </div>
+              </form>
+            </div>
+              </div>-->
+<!--
+            <div style="display: flex;justify-content: center;padding-top: 60px;">&lt;!&ndash;<img src="/assets/logo-toolynk.png" alt="image" style="width: 43%;">&ndash;&gt;</div>
+-->          <form
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+        >
+            <div style="display: flex;justify-content: center; padding-top: 20px"><h2>Welcome back</h2></div>
+            <div class="card" style="border-radius: 30px">
+              <h1  class="pt-2" style="height: 52px;">Sign in to your account</h1>
+              <div class="input-group " style="padding-left: 25px; width: 100%;padding-right: 3px; ">
+                <span class="input-group-addon my-btn"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
+<!--
+                <input  class="form-control" placeholder="Username" type="text" required [(ngModel)]="form.email"  #email="ngModel">
+-->
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  [(ngModel)]="form.email"
+                  placeholder="Username"
+                  required
+                  #email="ngModel"
+                />
+              </div>
+              <div class="input-group" style="padding-left: 25px; width: 100%;padding-right: 3px;">
+
+                <span class="input-group-addon my-btn"  ><i class="fa  fa-fw " [ngClass]="{'fa-eye-slash': !fieldTextType,'fa-eye': fieldTextType }" (click)="toggleFieldTextType()"></i></span>
+<!--
+                <input  class="form-control" placeholder="Password" [type]="fieldTextType ? 'text' : 'password'"  formControlName="password" type="password" >
+-->
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  [type]="fieldTextType ? 'text' : 'password'"
+                  [(ngModel)]="form.password"
+                  placeholder="Password"
+                  required
+                  minlength="6"
+                  #password="ngModel"
+                />
+                  <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-between my-control" >
+                  <mat-checkbox class="my-style-txt" color="primary">Remembrer me</mat-checkbox>
+                  <a  class="link-danger pe-2 my-style-txt">Forgot password? </a>
+              </div>
+              <div class="my-btn-submit">
+              <button>Submit</button>
+              </div>
+            </div>
+        </form>
+
+        </div>
+    </div>
+
+

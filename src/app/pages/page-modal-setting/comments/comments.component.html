@@ -1,0 +1,9 @@
+<form class="example-container" #options="ngForm" style="width: 100%;">
+  <mat-form-field style="width: 100%; border-radius: 10px;">
+    <textarea matInput name="questionText" cols="35" rows="8"
+              placeholder="Commentaire" [(ngModel)]="message" required
+              style="background: #e8ecef; "
+              (keyup)="SetMessage($event)">
+    </textarea>
+  </mat-form-field>
+</form>

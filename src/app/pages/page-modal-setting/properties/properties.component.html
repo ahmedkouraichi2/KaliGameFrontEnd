@@ -1,0 +1,473 @@
+<div *ngIf="type=='FS';then FS"></div>
+<div  *ngIf="type=='WEB';then Web"></div>
+<div  *ngIf="type=='DB';then Bd"></div>
+<ng-template #FS>
+<!--
+  <form class="mt-2">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="required-property-note">Champs requis</div>
+        <div>
+          <button mat-flat-button color="primary" (click)="openDialog()">
+            <span class="material-icons fa">add</span>
+          </button>
+        </div>
+      </div>
+      <div class="my-table">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [formGroup]="proprieteForm">
+
+          - Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition"
+
+          &lt;!&ndash; Position property &ndash;&gt;
+          <ng-container matColumnDef="property">
+            <th mat-header-cell *matHeaderCellDef> Propriété</th>
+            <td mat-cell *matCellDef="let element"class="table-row"  >
+              <div class="d-flex flex-row justify-content-between" >
+                <span>{{element.property}}</span>
+                <mat-icon >help</mat-icon>
+              </div>
+            </td>
+
+          </ng-container>
+
+          &lt;!&ndash; Name value &ndash;&gt;
+
+          <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> valeur</th>
+            <td mat-cell *matCellDef="let element" >
+              <mat-form-field floatLabel="never" style="padding-left: 20px;" >
+                <input matInput  formControlName="valeurSuivre" placeholder="Aucune valeur définie" [(ngModel)]="element.value"  (keyup)="sendPrprieteValueurSuivre()">
+              </mat-form-field>
+            </td>
+
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </form>
+-->
+  <table class="table" [formGroup]="proprieteForm" >
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width:50%">Propriété</th>
+      <th scope="col" style="width:50%">valeur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">Input Directory</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input matInput  formControlName="inputDirectory" placeholder="No value set" [(ngModel)]="propInputDirectory" (keyup)="SetPropInputDirectory()" >
+          <mat-error>
+            {{errors.inputDirectory}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">File Filter</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input   matInput  formControlName="filePath" placeholder="No value set" [(ngModel)]="propFilePath" (keyup)="SetFilePath()"   >
+          <mat-hint>Deep  must be number</mat-hint>
+          <mat-error>
+            {{errors.filePath}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">Path Filter</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input matInput  formControlName="pathSize" placeholder="No value set"  [(ngModel)]="propPathSize" (keyup)="SetPropPathSize()" >
+          <mat-error>
+            {{errors.patShize}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Bath Size</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  matInput  formControlName="bathSize" placeholder="No value set"  [(ngModel)]="propBathSize" (keyup)="SetPropBathSize()" >
+          <mat-error>
+            {{errors.bathSize}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Sub Directories</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td [formGroup]="SubDirectoriesForm" >
+        <mat-form-field >
+          <mat-select formControlName="inputDirectory" [(ngModel)]="propSubDirectories"  (selectionChange)="SetPropSubDirectories()" >
+            <mat-option *ngFor="let Directories of subDirectories " [value]="Directories.value" >
+              {{Directories.ViewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            {{errors.subDirectories}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Ignore Hidden Files</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td [formGroup]="IgnoreHiddenFilesForm" >
+        <mat-form-field>
+          <mat-select formControlName="ignoreHiddenFiles" [(ngModel)]="propIgnoreHiddenFiles"  (selectionChange)="SetPropIgnoreHiddenFiles()" >
+            <mat-option *ngFor="let ingoreHiddenFiles of ingoreHiddenFiles " [value]="ingoreHiddenFiles.value" >
+              {{ingoreHiddenFiles.ViewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            {{errors.ignoreHiddenFiles}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Minimum File Age</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  type="number" matInput  formControlName="minimumFileAge" placeholder="No value set" [(ngModel)]="propMinimumFileAge" (keyup)="SetPropMinimumFileAge() "  OnlyNumber="true">
+          <mat-hint>Minimum File Age  must be number</mat-hint>
+          <mat-error>
+            {{errors.minimumFileAge}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Maximum File Age</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  type="number" matInput  formControlName="maximumFileAge" placeholder="No value set" [(ngModel)]="propMaximumFileAge" (keyup)="SetPropMaximumFileAge() "  OnlyNumber="true">
+          <mat-hint>Maximum File Age  must be number</mat-hint>
+          <mat-error>
+            {{errors.maximumFileAge}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Minimum File Size</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  type="number" matInput  formControlName="minimumFileSize" placeholder="No value set" [(ngModel)]="propMinimumFileSize" (keyup)="SetPropMinimumFileSize() "  OnlyNumber="true">
+          <mat-hint>Maximum File Size  must be number</mat-hint>
+          <mat-error>
+            {{errors.maximumFileSize}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Maximum File Size</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  type="number" matInput  formControlName="maximumFileSize" placeholder="No value set" [(ngModel)]="propMaximumFileSize" (keyup)="SetPropMaximumFileSize() "  OnlyNumber="true">
+          <mat-hint>Maximum File Size  must be number</mat-hint>
+          <mat-error>
+            {{errors.maximumFileSize}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #Web>
+  <table class="table" [formGroup]="proprieteForm" >
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width:50%">Propriété</th>
+      <th scope="col" style="width:50%">valeur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">URL</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input matInput  formControlName="url" placeholder="No value set" [(ngModel)]="propUrl" (keyup)="SetPropUrl()" >
+          <mat-error>
+            {{errors.url}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">Deep</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  type="number" matInput  formControlName="deep" placeholder="No value set" [(ngModel)]="propDeep" (keyup)="SetPropDeep()"  OnlyNumber="true" >
+         <mat-hint>Deep  must be number</mat-hint>
+          <mat-error>
+            {{errors.deep}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">Site Map</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input matInput  formControlName="siteMap" placeholder="No value set"  [(ngModel)]="propSiteMap" (keyup)="SetPropSiteMap()" >
+          <mat-error>
+            {{errors.siteMap}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Filter</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  matInput  formControlName="filter" placeholder="No value set"  [(ngModel)]="propFilter" (keyup)="SetPropFilter()" >
+          <mat-error>
+            {{errors.filter}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #Bd>
+  <table class="table" [formGroup]="proprieteForm" >
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width:50%">Propriété</th>
+      <th scope="col" style="width:50%">valeur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">URL</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input matInput  formControlName="url" placeholder="No value set" [(ngModel)]="propUrl" (keyup)="SetPropUrl()" >
+          <mat-error>
+            {{errors.url}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">User</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input   matInput  formControlName="user" placeholder="No value set" [(ngModel)]="propUser" (keyup)="SetPropUser()"  OnlyNumber="true" >
+          <mat-error>
+            {{errors.user}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="p-2" style="font-weight: normal;">Password</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input type="password" matInput  formControlName="password" placeholder="No value set"  [(ngModel)]="propPassword" (keyup)="SetPropPassword()" >
+          <mat-error>
+            {{errors.password}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Object</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  matInput  formControlName="object" placeholder="No value set"  [(ngModel)]="propObject" (keyup)="SetPropObject()" >
+          <mat-error>
+            {{errors.object}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">Fields</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  matInput  formControlName="fields" placeholder="No value set"  [(ngModel)]="propFields" (keyup)="SetPropFields()" >
+          <mat-error>
+            {{errors.fields}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="d-flex flex-row justify-content-between" >
+          <div class="p-2" style="font-weight: normal;">clause</div>
+          <div class="p-2">
+            <mat-icon >help</mat-icon>
+          </div>
+
+        </div>
+      </th>
+      <td>
+        <mat-form-field>
+          <input  matInput  formControlName="clause" placeholder="No value set"  [(ngModel)]="propClause" (keyup)="SetPropClause()" >
+          <mat-error>
+            {{errors.clause}}
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>

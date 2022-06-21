@@ -1,0 +1,58 @@
+<mat-nav-list>
+  <div class="logo py-2">
+    <!--<img src="./assets/logo.svg" alt="Company Logo" />-->
+    <p>logo</p>
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+
+  <a mat-list-item routerLinkActive="list-item-active"  (click)="this.choisirMenu.setVar(1)">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" (click)="this.choisirMenu.setVar(2)">
+    <mat-icon>power</mat-icon> Connecteurs  </a>
+  <a mat-list-item routerLinkActive="list-item-active" (click)="this.choisirMenu.setVar(3)">
+    <mat-icon>people</mat-icon> utilisateurs
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" (click)="this.choisirMenu.setVar(4)">
+    <mat-icon>settings</mat-icon> Paramétres
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" (click)="this.choisirMenu.setVar(5)">
+    <mat-icon>help</mat-icon>  Aide
+  </a>
+</mat-nav-list>
+<!--<div class="app" style="display: flex; height: 100vh; ">
+  <CDBSidebar textColor="#ffffff" backgroundColor="#333333">
+    <CDBSidebarHeader [prefix]="icon" >
+      <ng-template #icon>
+        <i class="fa fa-bars fa-large"></i>
+      </ng-template>
+      Contrast
+    </CDBSidebarHeader>
+
+    <CDBSidebarContent>
+      <CDBSidebarMenu class="sidebar-content">
+        <CDBSidebarMenuItem link='/' icon="columns" >
+          Dashboard
+        </CDBSidebarMenuItem>
+        <CDBSidebarMenuItem link='/tables' icon="table" >
+
+        </CDBSidebarMenuItem>
+        <CDBSidebarMenuItem link='/profile' icon="user" >
+          Profile
+        </CDBSidebarMenuItem>
+        <CDBSidebarMenuItem href='/404' icon="exclamation-circle" >
+          <span style="margin-left: 5px;">404 Page</span>
+        </CDBSidebarMenuItem>
+      </CDBSidebarMenu>
+    </CDBSidebarContent>
+    <div class="mt-auto">
+
+      <CDBSidebarFooter style="text-align: center; margin-top: auto;">
+        <div class="sidebar-btn-wrapper" style="padding: 20px 5px">
+          Sidebar Footer
+        </div>
+      </CDBSidebarFooter>
+    </div>
+  </CDBSidebar>
+</div>-->

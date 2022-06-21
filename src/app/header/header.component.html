@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between pt-1">
+
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center"></button>
+          <img src="./assets/user.jpg" alt="" class="user-image mr-1 p-2"/>
+          User Name
+          <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"
+            (click)="menuTrigger.openMenu()">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <span (click)="menuTrigger.closeMenu()">
+      <button mat-menu-item class="my-dropdown">
+            <span class="material-icons ">help</span>
+            <span>Aide</span>
+          </button>
+      <button mat-menu-item class="my-dropdown">
+            <span class='material-icons '>logout</span>
+            <a [routerLink]="['/accounts/login']" style="color: #004849;text-decoration: none;" >&nbsp;logout</a>
+          </button>
+      </span>
+  </mat-menu>
+
+  </span>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

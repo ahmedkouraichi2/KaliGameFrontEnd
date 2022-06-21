@@ -1,0 +1,33 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <ul class="breadcrumb">
+    <li>
+      <h4 class="page-title"></h4>
+    </li>
+    <li class="breadcrumb-item bcrumb-1" style="color: #6c757d!important;">
+      <a [routerLink]="'/dashboard/home'">
+        <i class="fa fa-solid fa-house"></i>
+
+      </a>
+    </li>
+    <li class="breadcrumb-item" style="color: #6c757d!important;" >Utilisateurs</li>
+
+  </ul>
+</div>
+
+<div class="d-flex flex-column "  style=" margin-left: 10px;">
+  <div class="row m-3">
+    <div class="col-md-8 p-0 my-style">
+      <h4 style="color: #6c757d!important;">Gestion des Utilisateurs</h4>
+    </div>
+    <div class="d-flex justify-content-end ">
+      <button class="btn  btn-primary  button border border-dark" (click)="openDialog()">
+        &nbsp; Ajouter
+      </button>
+    </div>
+  </div>
+
+  <div class=" ps-3  text-center " style="   width: 91%; ">
+    <app-table-user></app-table-user>
+  </div>
+</div>
+

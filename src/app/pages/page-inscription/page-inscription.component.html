@@ -1,0 +1,117 @@
+<div class="container my-container">
+  <div class="card justify-content-md-center" >
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+    <div class="card-body">
+      <div class="login-title">
+        Register your account
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          First Name
+        </div>
+        <div class="setting-field">
+          <input type="text" placeholder="Enter your full name.."
+                 name="username"
+                 [(ngModel)]="form.firstName" required
+                 minlength="3"
+                 maxlength="20"
+                 #firstName="ngModel">
+          <div class="alert-danger" *ngIf="firstName.errors && f.submitted">
+            <div *ngIf="firstName.errors.required">Username is required</div>
+            <div *ngIf="firstName.errors.minlength">
+              First Name must be at least 3 characters
+            </div>
+            <div *ngIf="firstName.errors.maxlength">
+              First Name must be at most 20 characters
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="setting">
+        <div class="setting-name">
+          Last Name
+        </div>
+        <div class="setting-field">
+          <input type="password" placeholder="Enter a username.."
+                 name="username"
+                 [(ngModel)]="form.lastName"
+                 required
+                 minlength="3"
+                 maxlength="20"
+                 #lastName="ngModel">
+          <div class="alert-danger" *ngIf="lastName.errors && f.submitted">
+            <div *ngIf="lastName.errors.required">Username is required</div>
+            <div *ngIf="lastName.errors.minlength">
+              Last name must be at least 3 characters
+            </div>
+            <div *ngIf="lastName.errors.maxlength">
+              Last name must be at most 20 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          Email address
+        </div>
+        <div class="setting-field">
+          <input type="password" placeholder="Enter a email address.."
+                 name="email"
+                 [(ngModel)]="form.email"
+                 required
+                 email
+                 #email="ngModel">
+
+          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          Password
+        </div>
+        <div class="setting-field">
+          <input type="password" placeholder="Enter password.."
+                 name="password"
+                 [(ngModel)]="form.password"
+                 required
+                 minlength="6"
+                 #password="ngModel" >
+          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          Confirm Password
+        </div>
+        <div class="setting-field">
+          <input type="password" placeholder="Enter password again.." id="password">
+        </div>
+      </div>
+      <div class="button ">
+        <button class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+      <p class="setting-name my-title">Already have an account?
+        <a [routerLink]="['/accounts/login']" class="link-danger">Sign In</a>
+      </p>
+    </div>
+    </form>
+  </div>
+</div>
+

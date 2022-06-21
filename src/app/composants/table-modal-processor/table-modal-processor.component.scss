@@ -1,0 +1,47 @@
+.demo-table {
+  width: 100%;
+}
+p {
+  font-family: Lato;
+}
+tr:hover {
+  cursor: pointer;
+}
+.selected-row {
+  background-color: #fffbe6;
+}
+.mat-table {
+  overflow-x: scroll;
+}
+.dialog-header {
+  background: #728e9b;
+}
+.dialog-header-text {
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 56px;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+}
+.dialog-header-text {
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 56px;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+}
+.dialog-body-text {
+  color: #262626;
+  font-size: 15px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  line-height: 56px;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,85 @@
+.required-property-note {
+  font-weight: bold;
+  font-size: 12px;
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 6px;
+}
+.fa {
+  color: #004849;
+  height: 30px !important;
+  width: 30px !important;
+  font-size: 31px !important;
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: transparent;
+}
+.mat-flat-button.mat-primary:hover, .mat-raised-button.mat-primary:hover, .mat-fab.mat-primary:hover, .mat-mini-fab.mat-primary :hover{
+  background-color:#e3e8eb;
+}
+
+ table.mat-table {
+   border-spacing: 0;
+   width: 99%;
+ }
+tr.mat-header-row {
+  height: 35px;
+  background: #728e9b;
+}
+.mat-header-cell {
+  font-weight: 500;
+  font-size: 15px;
+  font-style: normal;
+}
+th.mat-header-cell:first-of-type {
+  padding-left: 24px;
+  color: #f9f6f6;
+  font-weight: bold;
+}
+th.mat-header-cell:last-of-type {
+  padding-left: 24px;
+  color: #f9f6f6;
+  font-weight: bold;
+}
+.material-icons {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  color: #003132;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #acacad !important;
+  font-weight: bold;
+}
+td.mat-cell {
+  border: 1px solid #c5d0d6;
+
+}
+
+td.mat-cell {
+  font-size: 14px;
+  font-style: normal;
+  color: #2a2929;
+  max-height: 10px;
+}
+.table .thead-dark th {
+  color: #fff;
+  background-color: #728e9b;
+  border-color: #728e9b;
+}
+
+

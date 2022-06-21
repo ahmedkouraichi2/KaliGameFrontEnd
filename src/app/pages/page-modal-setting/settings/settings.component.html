@@ -1,0 +1,158 @@
+  <div class="configuration-tab processor-configuration-tabs-content snipcss-prFSQ snip-div" style="display: block;overflow-x:hidden;overflow-y: hidden;">
+    <div class="settings-left mt-3">
+      <div class="setting" [formGroup]="settingForm" >
+        <div class="setting-name">
+          Nom
+        </div>
+        <div id="processor-name-container" class="setting-field">
+          <input type="text" formControlName="name"  [(ngModel)]="settingName"  (keyup)="sendSettingName()" >
+        </div>
+      </div>
+      <div class="setting">
+      <div  [formGroup]="settingForm" >
+        <div class="setting-name">
+          Type
+        </div>
+        <mat-select formControlName="etat" [(ngModel)]="selectedStatus"  (selectionChange)="sendSettingStatus()" >
+          <mat-option *ngFor="let statut of status" [value]="statut.value" >
+            {{statut.viewValue}}
+          </mat-option>
+        </mat-select>
+
+      </div>
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          Type
+        </div>
+        <div class="setting-field">
+        <span class="snip-span">
+          {{type}}
+        </span>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="setting-name">
+          Empaqueter
+        </div>
+        <div id="processor-bundle" class="setting-field">
+          fr.toolink       </div>
+      </div>
+      <div class="setting">
+        <div class="penalty-duration-setting">
+          <div class="setting-name">
+            Durée de la pénalité
+            <div class="fa fa-question-circle" title="The amount of time used when this processor penalizes a FlowFile.">
+            </div>
+          </div>
+          <div class="setting-field">
+            <input type="text" id="penalty-duration" name="penalty-duration" class="">
+          </div>
+        </div>
+        <div class="yield-duration-setting">
+          <div class="setting-name">
+            Durée de rendement
+            <div class="fa fa-question-circle" title="When a processor yields, it will not be scheduled again until this amount of time elapses.">
+            </div>
+          </div>
+          <div class="setting-field">
+            <input type="text" id="yield-duration" name="yield-duration" class="">
+          </div>
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+      <div class="setting">
+        <div class="bulletin-setting">
+          <div class="setting-name">
+            Niveau bulletin
+            <div class="fa fa-question-circle" title="The level at which this processor will generate bulletins.">
+            </div>
+          </div>
+          <div class="setting-field">
+           <!-- <div class="combo-button-normal pointer combo snip-div">-->
+              <!--<div class="combo-text">
+                WARN
+              </div>
+              <div class="combo-arrow fa fa-chevron-down">
+              </div>-->
+              <mat-form-field appearance="fill" >
+                <mat-select [(ngModel)]="selectedValue" name="bulltin">
+                  <mat-option *ngFor="let bulletin of bulletins" [value]="bulletin.value">
+                    {{bulletin.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          <!--</div>-->
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+    <div class="spacer">
+      &nbsp;
+    </div>
+    <div class="settings-right mt-3">
+      <div class="setting">
+        <div class="setting-name">
+          Mettre fin automatiquement aux relations
+          <div class="fa fa-question-circle" title="Will automatically terminate FlowFiles sent to a given relationship if it is not defined elsewhere.">
+          </div>
+        </div>
+        <div class="setting-field">
+          <div id="auto-terminate-relationship-names" class="">
+            <section class="example-section" [formGroup]="toppings">
+            <div class="processor-relationship-container mb-3">
+
+              <div class="processor-relationship nf-checkbox checkbox-unchecked">
+              </div>
+              <mat-checkbox formControlName="failure" color=primary>
+              <div class="relationship-name nf-checkbox-label ellipsis" style="text-overflow: ellipsis;">
+                échec
+              </div>
+              <span class="hidden">
+              échec
+              </span>
+              </mat-checkbox>
+              <div class="relationship-description">
+                Lorsqu'un FlowFile échoue pour une raison autre que l'échec de la définition de l'état, il est acheminé ici.
+              </div>
+            </div>
+            <div class="processor-relationship-container mb-3">
+              <div class="processor-relationship nf-checkbox checkbox-unchecked">
+              </div>
+              <mat-checkbox formControlName="setStateFail" color=primary>
+              <div class="relationship-name nf-checkbox-label ellipsis" style="text-overflow: ellipsis;">
+                Échec de la définition de l'état
+              </div>
+              <span class="hidden">
+              Échec de la définition de l'état
+            </span>
+              </mat-checkbox>
+              <div class="relationship-description">
+                Lorsque l'état ne parvient pas à enregistrer lors du traitement d'un FlowFile, le FlowFile est acheminé ici.
+              </div>
+            </div>
+            <div class="processor-relationship-container mb-3">
+              <div class="processor-relationship nf-checkbox checkbox-unchecked">
+              </div>
+              <mat-checkbox formControlName="success" color=primary>
+              <div class="relationship-name nf-checkbox-label ellipsis" style="text-overflow: ellipsis;">
+                Succès
+              </div>
+              <span class="hidden">
+              Succès
+            </span>
+              </mat-checkbox>
+              <div class="relationship-description">
+                Tous les FlowFiles traités avec succès sont acheminés ici
+              </div>
+            </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

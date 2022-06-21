@@ -1,0 +1,119 @@
+.border-right{
+  border-right: 2px solid #e3e8eb;
+}
+.custom-border{
+  border:solid #e3e8eb;
+  border-radius: 3px;
+}
+.my-style{
+  color: #262626;
+  letter-spacing: 1px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+  margin-top:20px;
+  background-color: #f7f7ff;
+}
+.radius-10 {
+  border-radius: 10px !important;
+}
+
+.border-info {
+  border-left: 5px solid  #728e9b !important;
+}
+.border-danger {
+  border-left: 5px solid #71b555 !important
+}
+.border-success {
+  border-left: 5px solid  #15ca20 !important;
+}
+.border-warning {
+  border-left: 5px solid  #ffc107 !important;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-radius: .25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+.bg-gradient-scooter {
+  background: #728e9b;
+  background: -webkit-linear-gradient(
+      45deg
+    ,#728e9b, #6078ea)!important;
+  background: linear-gradient(
+      45deg
+    , #728e9b, #6078ea)!important;
+}
+.widgets-icons-2 {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  font-size: 27px;
+  border-radius: 10px;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.text-white {
+  color: #fff!important;
+}
+.ms-auto {
+  margin-left: auto!important;
+}
+.bg-gradient-bloody {
+  background: #15ca20;
+  background: -webkit-linear-gradient(
+      45deg
+    ,#44933f, #6ebd55)!important;
+  background: linear-gradient(
+      45deg
+    , #44933f, #6ebd55)!important;
+}
+
+.bg-gradient-ohhappiness {
+  background: #ffd68c;
+  background: -webkit-linear-gradient(
+      45deg
+    , #ffc107, #ffd68c)!important;
+  background: linear-gradient(
+      45deg
+    , #ffc107, #ffd68c)!important;
+}
+
+.bg-gradient-blooker {
+  background: #ffdf40;
+  background: -webkit-linear-gradient(
+      45deg
+    , #ffdf40, #ff8359)!important;
+  background: linear-gradient(
+      45deg
+    , #ffdf40, #ff8359)!important;
+}
+.row-cols-xl-4>* {
+  flex: 0 0 auto;
+  width: 33%;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.row-chart-line {
+  flex: 0 0 auto;
+  width: 60%;
+
+}
