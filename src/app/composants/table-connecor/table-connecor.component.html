@@ -1,38 +1,39 @@
+
+<h1>Domaines</h1>
+
 <div class="container-fluid page">
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    <input matInput  placeholder="Ex. ium" #input>
   </mat-form-field>
   <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="connecteur">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Connecteur</mat-header-cell>
-      <mat-cell *matCellDef="let row;">{{row.name}}</mat-cell>
+      <mat-cell *matCellDef="let row;">{{row.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="type" >
       <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
-      <mat-cell *matCellDef="let row;">{{row.type}}</mat-cell>
+      <mat-cell *matCellDef="let row;">{{row.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="dateCreation">
       <mat-header-cell *matHeaderCellDef mat-sort-header >Date Créaction</mat-header-cell>
       <mat-cell *matCellDef="let row;">{{row.dateCreation | date: 'dd/MM/yyyy hh:mm a'}}</mat-cell>
-    </ng-container><ng-container matColumnDef="dateModification">
-    <mat-header-cell *matHeaderCellDef mat-sort-header >date de modification</mat-header-cell>
-    <mat-cell *matCellDef="let row;">{{row.lastModifiedDate | date: 'dd/MM/yyyy hh:mm a'}}</mat-cell>
-  </ng-container>
+    </ng-container>
+    
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
       <mat-cell *matCellDef="let row;">
         <div *ngIf="row.status== 'Inactif';then actif else Inactif">here is ignored</div>
         <ng-template #actif>
           <a mat-icon-button >
-          <mat-icon color="primary"  (click)="play(row)">play_circle</mat-icon>
+          <mat-icon color="primary"  >play_circle</mat-icon>
         </a></ng-template>
         <ng-template #Inactif>
           <a mat-icon-button  >
-          <mat-icon color="accent" (click)="stop(row)">pause_circle</mat-icon>
+          <mat-icon color="accent" >pause_circle</mat-icon>
         </a></ng-template>
           <a mat-icon-button  >
-            <mat-icon color="warn" (click)="play(row)" >restart_alt</mat-icon>
+            <mat-icon color="warn" >restart_alt</mat-icon>
           </a>
 
 
@@ -41,15 +42,15 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
       <mat-cell *matCellDef="let row;">
-        <a mat-icon-button (click)="openDialog(row)">
+        <a mat-icon-button >
           <mat-icon color="primary">edit</mat-icon>
         </a>
        <!-- <a mat-icon-button (click)="supprimerProcessor(row)">-->
-        <a mat-icon-button (click)="openDialogDelete(row)" >
+        <a mat-icon-button  >
           <mat-icon color="warn" >delete</mat-icon>
         </a>
 
-        <a mat-icon-button (click)="clone(row)" >
+        <a mat-icon-button  >
           <i  class="fa fa-duotone fa-clone"></i>
         </a>
       </mat-cell>

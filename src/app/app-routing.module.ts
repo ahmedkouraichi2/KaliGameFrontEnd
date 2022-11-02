@@ -24,10 +24,17 @@ import {ERole} from "./services/model/ERole";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 import {PageLogOutComponent} from "./pages/page-log-out/page-log-out.component";
 import {PageCollectionComponent} from "./pages/page-collection/page-collection.component";
+import {NotFoundComponent} from "./composants/error/not-found/not-found.component"
 
 const routes: Routes = [
+
+
   {
-    path: 'accounts/login',
+    path:'la',
+    component:NotFoundComponent
+  },
+  {
+    path:'',
     component: PageLoginComponent
   },
   {
@@ -37,7 +44,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: PageDashboardComponent,
-    canActivate: [AuthGuard],
+
     children: [
       {
         path: 'home',
@@ -76,36 +83,37 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: PageHomeComponent,
-        canActivate: [AuthGuard]
+        component: PageHomeComponent
+       
       },
+
+      {path:'r',component:RegisterComponent},
+
       {
         path: 'connectors',
         component: PageConteneurComponent,
-        canActivate: [AuthGuard]
+       
       },
       {
         path: 'logout',
         component: PageLogOutComponent,
-        canActivate: [AuthGuard],
 
       },
       {
         path: 'users',
         component: PageUtlilisateurComponent,
-        canActivate: [AuthGuard],
-
+      
       },
 
       {
         path: 'profile',
         component: PageProfilComponent,
-        canActivate: [AuthGuard],
+      
       },
       {
         path: 'collection',
         component: PageCollectionComponent,
-        canActivate: [AuthGuard],
+       
       },
       {
         path: 'setting',
@@ -116,13 +124,13 @@ const routes: Routes = [
       {
         path: 'help',
         component: PageAideComponent,
-        canActivate: [AuthGuard]
+       
 
       },
       {
-        path: '**',
+        path: 'accounts/login',
         redirectTo: 'accounts/login',
-        pathMatch: 'full'
+     
       }
     ]
   },

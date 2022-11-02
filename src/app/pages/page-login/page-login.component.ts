@@ -64,7 +64,9 @@ export class PageLoginComponent implements OnInit {
     this.repeatFieldTextType = !this.repeatFieldTextType;
   }
   onSubmit(): void {
-    const { email, password } = this.form;
+
+
+ /*    const { email, password } = this.form;
     this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.token.toString());
@@ -80,8 +82,11 @@ export class PageLoginComponent implements OnInit {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
-    );
-  }
+    ); */
+
+
+    this.router.navigate(["/dashboard/home"]) }
+
   reloadPage(): void {
     window.sessionStorage.clear();
   }

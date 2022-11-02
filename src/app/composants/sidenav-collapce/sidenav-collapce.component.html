@@ -1,13 +1,15 @@
 <div class="sidenav" [ngClass]="collapsed ?'sidenav-collapsed':''">
   <div class="logo-container">
-    <button class="logo" (click)="toggleCollapse()">CD</button>
-
-    <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+    <button class="logo" (click)="toggleCollapse()">
+      
+      <img    style="background-color: white;" *ngIf="!collapsed " alt="logo" width="30px" height="30px" src="../../../assets/logo-min.ico">
+      <img   *ngIf="collapsed "alt="logo" width="100px" height="100px" src="../../../assets/logo.png"></button>
+      <button type="button" class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
       <i class='fa fa-times close-icon'></i>
     </button>
   </div>
   <div class=" d-flex justify-content-center logo-container">
-    <div class="logo-text" @fadeIn *ngIf="collapsed ">Data Collect</div>
+    <div class="logo-text" @fadeIn *ngIf="collapsed ">KALI Game</div>
   </div>
   <ul class="sidenav-nav">
     <li class="sidenav-nav-item" *ngFor="let data of navData " >

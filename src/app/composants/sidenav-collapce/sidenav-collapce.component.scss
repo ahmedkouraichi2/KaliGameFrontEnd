@@ -2,7 +2,7 @@
 @import '@syncfusion/ej2-angular-navigations/styles/material.css';
 
 .sidenav{
-  background: #eaeef0;
+  background: #069fa9;
   transition: all 1s ease;
   position: fixed;
   z-index: 1;
@@ -21,6 +21,7 @@
   .logo{
     background: transparent;
     color:#647279 ;
+   // background-color: white;
     text-align: center;
     width: 3rem;
     min-width: 3rem;

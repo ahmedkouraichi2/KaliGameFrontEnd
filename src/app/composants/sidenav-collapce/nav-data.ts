@@ -6,13 +6,13 @@ export const navbardata=[
   },
   {
     routeLink:'connectors',
-    icon:'fa fa-duotone fa-plug ',
-    label:'Connecteurs'
+    icon:'fa fa-envelope ',
+    label:'Invite'
   },
   {
     routeLink:'setting',
     icon:'fa fa-duotone fa-gears ',
-    label:'Paramètres'
+    label:'Gestions'
   },
   {
     routeLink:'help',

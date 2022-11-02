@@ -89,6 +89,8 @@ import {NgApexchartsModule} from "ng-apexcharts";
 import {FileUploadComponent} from "./composants/file-upload/file-upload.component";
 import {PageLogOutComponent} from "./pages/page-log-out/page-log-out.component";
 import {PageCollectionComponent} from "./pages/page-collection/page-collection.component";
+import { NotFoundComponent } from './composants/error/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -146,7 +148,8 @@ import {PageCollectionComponent} from "./pages/page-collection/page-collection.c
     PageModalUserUpdateComponent,
     FileUploadComponent,
     PageLogOutComponent,
-    PageCollectionComponent
+    PageCollectionComponent,
+    NotFoundComponent
 
 
 

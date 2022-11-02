@@ -1,20 +1,46 @@
-.border-right{
-  border-right: 2px solid #e3e8eb;
+.pnd {
+	font-family: 'montserrat', sans-serif;
+	color: #eee;
+	width: 100%;
+	height: 100%;	background: url("../../../assets/images/404_mob.jpg") no-repeat fixed center/cover;
+    
+	height: 100vh;
+
+	p {
+		font-size: 2.5rem;
+		
+		padding: 0.5rem;
+		text-align: center;
+		font-size: 1.35rem;
+		text-align: center;
+	}
+	h1 {
+		font-size: 15rem;
+		font-family: 'League Spartan Bold', sans-serif;
+		padding: 1rem;
+
+		text-align: center;
+		font-size: 10rem;
+		font-family: 'League Spartan Bold', sans-serif;
+		
+		padding-bottom: 25%;
+		text-align: center;
+	}
+	a {
+		text-decoration: none;
+		color: #FFE81F;
+		&:hover {
+			color: rgba(199, 157, 17, 0.591);
+			transition: 1s;
+		}
+	}
 }
-.custom-border{
-  border:solid #e3e8eb;
-  border-radius: 3px;
+.error-message {
+	width: 60%;
+	width: 100%;
+	margin: auto;
 }
-.my-style{
-  color: #262626;
-  letter-spacing: 1px;
-  font-style: normal;
-  font-weight: normal;
-}
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  background-color: transparent;
-  font-size: larger;
-}
+
+
+
+
