@@ -1,66 +1,62 @@
 
-<h1>Domaines</h1>
-
-<div class="container-fluid page">
+ <div class="container-fluid page">
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
     <input matInput  placeholder="Ex. ium" #input>
   </mat-form-field>
-  <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="connecteur">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Connecteur</mat-header-cell>
-      <mat-cell *matCellDef="let row;">{{row.id}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="type" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
-      <mat-cell *matCellDef="let row;">{{row.name}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="dateCreation">
-      <mat-header-cell *matHeaderCellDef mat-sort-header >Date Créaction</mat-header-cell>
-      <mat-cell *matCellDef="let row;">{{row.dateCreation | date: 'dd/MM/yyyy hh:mm a'}}</mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-      <mat-cell *matCellDef="let row;">
-        <div *ngIf="row.status== 'Inactif';then actif else Inactif">here is ignored</div>
-        <ng-template #actif>
-          <a mat-icon-button >
-          <mat-icon color="primary"  >play_circle</mat-icon>
-        </a></ng-template>
-        <ng-template #Inactif>
-          <a mat-icon-button  >
-          <mat-icon color="accent" >pause_circle</mat-icon>
-        </a></ng-template>
-          <a mat-icon-button  >
-            <mat-icon color="warn" >restart_alt</mat-icon>
-          </a>
 
 
-      </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
-      <mat-cell *matCellDef="let row;">
-        <a mat-icon-button >
-          <mat-icon color="primary">edit</mat-icon>
-        </a>
-       <!-- <a mat-icon-button (click)="supprimerProcessor(row)">-->
-        <a mat-icon-button  >
-          <mat-icon color="warn" >delete</mat-icon>
-        </a>
+  <div class="mat-elevation-z8">
+     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
-        <a mat-icon-button  >
-          <i  class="fa fa-duotone fa-clone"></i>
-        </a>
-      </mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns" style="background: #728e9b;">
-    </mat-header-row>
-    <mat-row  *matRowDef="let row; columns: displayedColumns;" ></mat-row>
-  </mat-table>
+
+      <ng-container  matColumnDef="name"  >
+        <th mat-header-cell  style="width: 1400px" *matHeaderCellDef>Domaine</th>
+        <td mat-cell mat-cell *matCellDef="let element" (clik)="toQuestions(element.id)"   >
+          {{ element.name }}
+
+        </td>
+      </ng-container>
+
+<!--       (click)="toQuestions(element.id)"  -->
+
+
+      <ng-container matColumnDef="UPDATE/DELETE">
+        <th mat-header-cell *matHeaderCellDef>Supp / modif</th>
+        <mat-cell style="margin-left: 100px" mat-cell *matCellDef="let element">
+          <button style="background-color:red;" type="button" class="btn btn-danger px-3" (click)="delete(element.id)">
+
+                <mat-icon color="white" >delete</mat-icon>
+
+
+
+          </button>
+
+
+
+
+
+
+          <button
+            type="button"
+
+            (click)="edit(element.id, element.name)"
+            class="btn btn-info px-4 m-auto"
+          >
+              <mat-icon color="primary">edit</mat-icon>
+
+
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator style="width:98%"  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
 </div>
-<mat-paginator
-  [pageSizeOptions]="[20, 30,40]"
-  showFirstLastButtons
-></mat-paginator>
+

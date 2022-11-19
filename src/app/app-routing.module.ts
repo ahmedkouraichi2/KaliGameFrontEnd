@@ -7,26 +7,45 @@ import {PageDashboardComponent} from "./pages/page-dashboard/page-dashboard.comp
 import {PageHomeComponent} from "./pages/page-home/page-home.component";
 import {PageConteneurComponent} from "./pages/page-conteneur/page-conteneur.component"
 import {PageUtlilisateurComponent} from "./pages/page-utlilisateur/page-utlilisateur.component"
-import {PageParametreComponent} from "./pages/page-parametre/page-parametre.component";
 import {PageAideComponent} from "./pages/page-aide/page-aide.component";
-import {PageModalFsComponent} from "./pages/page-modal-fs/page-modal-fs.component";
-import {PageModalWebComponent} from "./pages/page-modal-web/page-modal-web.component";
-import {PageModalDbComponent} from "./pages/page-modal-db/page-modal-db.component";
 import {PageModalSettingComponent} from "./pages/page-modal-setting/page-modal-setting.component";
-import {SettingsComponent} from "./pages/page-modal-setting/settings/settings.component";
 import {SchedulingComponent} from "./pages/page-modal-setting/scheduling/scheduling.component";
 import {CommentsComponent} from "./pages/page-modal-setting/comments/comments.component";
 import {PropertiesComponent} from "./pages/page-modal-setting/properties/properties.component";
 import {AuthGuard} from "./helpers/auth.guard";
-import {LoginComponent} from "./composants/login/login.component";
 import {RegisterComponent} from "./composants/register/register.component";
-import {ERole} from "./services/model/ERole";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
-import {PageLogOutComponent} from "./pages/page-log-out/page-log-out.component";
-import {PageCollectionComponent} from "./pages/page-collection/page-collection.component";
 import {NotFoundComponent} from "./composants/error/not-found/not-found.component"
+import { EmailComponent } from './composants/Email/email/email.component';
+import { ExamComponent } from './composants/Exam/exam/exam.component';
+import { DashbordExamComponent } from './composants/Exam/dashbord-exam/dashbord-exam.component';
+import { QuestionExamComponent } from './composants/Exam/question-exam/question-exam.component';
+import { MerciComponent } from './composants/Exam/merci/merci.component';
+import { PageQuestionQuizComponent } from './pages/page-question-quiz/page-question-quiz.component';
 
 const routes: Routes = [
+
+
+
+  {
+    path:'Exam',
+    component:ExamComponent
+  },
+
+  {
+    path:'dashbordxam/:id',
+    component:DashbordExamComponent
+  },
+
+  {
+    path:'examQuestion',
+    component:QuestionExamComponent
+  },
+
+  {
+    path:'MerciComponent',
+    component:MerciComponent
+  },
 
 
   {
@@ -46,9 +65,16 @@ const routes: Routes = [
     component: PageDashboardComponent,
 
     children: [
+
+      {
+        path:"question/:id",
+        component:PageQuestionQuizComponent
+      },
       {
         path: 'home',
         component: PageHomeComponent,
+
+
 
         children: [
           {
@@ -56,9 +82,18 @@ const routes: Routes = [
             component: PageModalSettingComponent,
             children: [
               {
-                path: 'setting',
-                component: SettingsComponent
+                path: 'PageQuestionQuizComponent',
+                component: PageQuestionQuizComponent
               },
+
+              {
+
+                path:'EmailComponent',
+                component:EmailComponent
+
+
+              },
+
               {
                 path: 'scheduling',
                 component: SchedulingComponent
@@ -72,68 +107,61 @@ const routes: Routes = [
                 component: PropertiesComponent
               },
 
-              {
-                path: '**',
-                redirectTo: 'setting'
-              }
             ]
           }
         ]
 
       },
       {
-        path: 'home',
-        component: PageHomeComponent
-       
+        path: '1',
+        component: PageQuestionQuizComponent
+
       },
 
       {path:'r',component:RegisterComponent},
 
       {
-        path: 'connectors',
+        path: 'domaines',
         component: PageConteneurComponent,
-       
-      },
-      {
-        path: 'logout',
-        component: PageLogOutComponent,
 
       },
+
       {
-        path: 'users',
+        path: 'usersKaligame',
         component: PageUtlilisateurComponent,
-      
+
       },
 
       {
         path: 'profile',
         component: PageProfilComponent,
-      
-      },
-      {
-        path: 'collection',
-        component: PageCollectionComponent,
-       
-      },
-      {
-        path: 'setting',
-        component: PageParametreComponent,
-        canActivate: [AuthGuard]
 
       },
       {
+        path: 'collection',
+        component: EmailComponent,
+
+      },
+    
+      {
         path: 'help',
         component: PageAideComponent,
-       
+
 
       },
       {
         path: 'accounts/login',
         redirectTo: 'accounts/login',
-     
+
       }
     ]
   },
+
+
+  {
+    path:'app-page-utlilisateur',
+    component:PageUtlilisateurComponent
+  }
 ];
 
 @NgModule({

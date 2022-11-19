@@ -1,15 +1,9 @@
+<!--
 <div class="header fixed-top" [ngClass]="getHeaderClass()">
   <div class="card my-header" style="height: 65px;margin: auto">
     <div id="expand-box">
       <div id="expand-box-header" class="clearfix">
-        <span style="float: left;">
-          <div class="search ml-4" style="    margin-top: 5px;">
-            <input type="text" class="searchTerm" placeholder="Recherche ...">
-            <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </span>
+
         <span style="float: right;">
           <div class="card" style="background: transparent; border: none">
             <ul class="navbar-nav align-items-center d-none d-md-flex">
@@ -21,33 +15,17 @@
                              alt=""
                              *ngIf="!isImageLoading;"
                              style="width: 30px;  height: 30px;object-fit: contain;clip-path:ellipse(40% 40%)">
-                        <!--<ng-template #noImageFound>
-                          <img src="assets/user.png" alt="">
-                        </ng-template>-->
+
                       </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold mr-4" [routerLink]="['profile']"
                         style="color: #647279;font-size: 18px;">{{this.userUpdate.firstName}}&nbsp;{{this.userUpdate.lastName}}</span>
                   </div>
-        </div>
-      </a>
-     <!-- <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
-
-        <button type="button" [routerLink]="['profile']" style="  border: none;
-           background: white;     margin-left: 16px;  color: #6c757d!important;  ">
-          <i class="fa fa-duotone fa-user"></i>
-          <span>&nbsp;Profile</span>
-        </button>
-
-         <button type="button" class="" (click)="logout()" style="  border: none;
-           background: white;     margin-left: 16px; color: #6c757d!important; ">
-          <i class="fa fa-duotone fa-arrow-right-from-bracket"></i>
-          <span>&nbsp;Logout</span>
-        </button>
-      </div>-->
+            </div>
+          </a>
 
 
-    </li>
+       </li>
   </ul>
           </div>
         </span>
@@ -55,3 +33,35 @@
     </div>
   </div>
 </div>
+ -->
+
+
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <li class="nav-item" ngbDropdown placement="bottom-right">
+      <a class="nav-link pr-0" role="button" ngbDropdownToggle>
+        <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img src="../../../assets/user.jpg" [routerLink]="['profile']"
+                   alt=""
+                   *ngIf="!isImageLoading;"
+                   style="width: 60px;  height: 60px;object-fit: contain;clip-path:ellipse(40% 40%)">
+
+            </span>
+        <div class="media-body ml-2 d-none d-lg-block">
+        <span class="mb-0 text-sm  font-weight-bold mr-4" [routerLink]="['profile']"
+              style="color: #647279;font-size: 18px;">{{this.userUpdate.firstName}}&nbsp;{{this.userUpdate.lastName}}</span>
+        </div>
+  </div>
+</a>
+
+
+</li>
+
+</ul>
+
+
+
+
+
+

@@ -10,8 +10,6 @@ import { AppComponent } from './app.component';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -19,21 +17,13 @@ import { MaterialModule } from './material.module';
 import {MatButtonModule} from '@angular/material/button';
 import { PageConteneurComponent } from './pages/page-conteneur/page-conteneur.component';
 import { PageUtlilisateurComponent } from './pages/page-utlilisateur/page-utlilisateur.component';
-import { PageParametreComponent } from './pages/page-parametre/page-parametre.component';
 import { PageAideComponent } from './pages/page-aide/page-aide.component';
 import {DetailConteneurComponent} from "./composants/detail-conteneur/detail-conteneur.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatTableModule} from '@angular/material/table';
 import {ButtonActionComponent} from "./composants/button-action/button-action.component";
-import { PageProcesseurComponent } from './pages/page-processeur/page-processeur.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
-import { PageModalFsComponent } from './pages/page-modal-fs/page-modal-fs.component';
-import {PageModalWebComponent  } from './pages/page-modal-web/page-modal-web.component';
-import { PageModalDbComponent } from './pages/page-modal-db/page-modal-db.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {TableModalProcessorComponent} from "./composants/table-modal-processor/table-modal-processor.component";
-import {SearchPipe} from "./composants/table-modal-processor/search.pipe";
-import {ModalDescriptionComponent} from "./composants/modal-description/modal-description.component";
 import {TableConnecorComponent} from"./composants/table-connecor/table-connecor.component";
 import {TableSettingComponent} from "./composants/table-setting/table-setting.component";
 import {SettingsComponent} from "./pages/page-modal-setting/settings/settings.component";
@@ -47,14 +37,14 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatCardModule} from "@angular/material/card";
 import{AddPropertyComponent} from "./pages/page-modal-setting/add-property/add-property.component";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
-import {  SidebarModule } from 'ng-cdbangular';
+import {SidebarModule } from 'ng-cdbangular';
 import {SidenavCollapceComponent} from './composants/sidenav-collapce/sidenav-collapce.component';
 import {BodyComponent} from './composants/body/body.component';
 import {HeaderBodyComponent} from './composants/header-body/header-body.component';
 import {TableTestComponent} from './composants/table-test/table-test.component';
 import {HTTP_INTERCEPTORS, HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {MatPaginatorModule} from "@angular/material/paginator";
-import { MatSortModule} from '@angular/material/sort';
+import {MatSortModule} from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {PageModalSettingUpdateComponent} from "./pages/page-modal-setting-update/page-modal-setting-update.component";
 import {PageModalSettingUpdateWapperComponent} from "./pages/page-modal-setting-update/page-modal-setting-update-wapper.component";
@@ -69,9 +59,6 @@ import {CommentsUpdateComponent} from "./pages/page-modal-setting-update/comment
 import {
   AddPropertyUpdateComponent
 } from "./pages/page-modal-setting-update/add-property-update/add-property-update.component";
-import {LoginComponent} from "./composants/login/login.component";
-import {HomeComponent} from "./composants/home/home.component";
-import {ProfileComponent} from "./composants/profile/profile.component";
 import {RegisterComponent} from "./composants/register/register.component";
 
 import {AuthGuard} from "./helpers/auth.guard";
@@ -87,9 +74,29 @@ import { ChartsModule } from 'ng2-charts';
 import {PageModalUserUpdateComponent} from "./pages/page-modal-user-update/page-modal-user-update.component";
 import {NgApexchartsModule} from "ng-apexcharts";
 import {FileUploadComponent} from "./composants/file-upload/file-upload.component";
-import {PageLogOutComponent} from "./pages/page-log-out/page-log-out.component";
 import {PageCollectionComponent} from "./pages/page-collection/page-collection.component";
 import { NotFoundComponent } from './composants/error/not-found/not-found.component';
+import { EmailComponent } from './composants/Email/email/email.component';
+
+
+
+import {MatRadioModule} from '@angular/material/radio';
+import { EmailEnvoyerComponent } from './composants/Email/email-envoyer/email-envoyer.component';
+import { ExamComponent } from './composants/Exam/exam/exam.component';
+import { DashbordExamComponent } from './composants/Exam/dashbord-exam/dashbord-exam.component';
+import { TutoInfoExamComponent } from './composants/Exam/tuto-info-exam/tuto-info-exam.component';
+import { OpenDialogComponent } from './composants/Exam/open-dialog/open-dialog.component';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import { QuestionExamComponent } from './composants/Exam/question-exam/question-exam.component';
+import { MerciComponent } from './composants/Exam/merci/merci.component';
+import { TempsComponent } from './composants/Exam/temps/temps.component';
+import { PageAddDomaineComponent } from './pages/page-add-domaine/page-add-domaine.component';
+import { PageDeleteDomaineComponent } from './pages/page-delete-domaine/page-delete-domaine.component';
+import { PageUpdateDomaineComponent } from './pages/page-update-domaine/page-update-domaine.component';
+import { PageQuestionQuizComponent } from './pages/page-question-quiz/page-question-quiz.component';
+import { PageAddQuestionComponent } from './pages/page-add-question/page-add-question.component';
+import { ButtonActionQuestionComponent } from './composants/button-action-question/button-action-question.component';
 
 
 @NgModule({
@@ -98,23 +105,18 @@ import { NotFoundComponent } from './composants/error/not-found/not-found.compon
     PageLoginComponent,
     PageInscriptionComponent,
     PageDashboardComponent,
-    ModalDescriptionComponent,
     PageHomeComponent,
-    SidenavComponent,
-    HeaderComponent,
-    TableModalProcessorComponent,
+
+
     PageConteneurComponent,
     PageUtlilisateurComponent,
-    PageParametreComponent,
     DialogWrapperComponent,
     PageAideComponent,
     DetailConteneurComponent,
     ButtonActionComponent,
-    PageProcesseurComponent,
-    PageModalFsComponent,
-    PageModalWebComponent,
-    PageModalDbComponent,
-    SearchPipe,
+
+
+
     TableConnecorComponent,
     TableSettingComponent,
     SettingsComponent,
@@ -136,9 +138,6 @@ import { NotFoundComponent } from './composants/error/not-found/not-found.compon
     PropertiesUpdateComponent,
     CommentsUpdateComponent,
     AddPropertyUpdateComponent,
-    LoginComponent,
-    HomeComponent,
-    ProfileComponent,
     RegisterComponent,
     TableUserComponent,
     PageModalDeleteComponent,
@@ -147,9 +146,25 @@ import { NotFoundComponent } from './composants/error/not-found/not-found.compon
     PageProfilComponent,
     PageModalUserUpdateComponent,
     FileUploadComponent,
-    PageLogOutComponent,
+
     PageCollectionComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EmailComponent,
+    EmailEnvoyerComponent,
+    ExamComponent,
+    DashbordExamComponent,
+    TutoInfoExamComponent,
+    OpenDialogComponent,
+    QuestionExamComponent,
+    MerciComponent,
+    TempsComponent,
+    PageAddDomaineComponent,
+    PageDeleteDomaineComponent,
+    PageUpdateDomaineComponent,
+    PageQuestionQuizComponent,
+    PageAddQuestionComponent,
+    ButtonActionQuestionComponent
+
 
 
 
@@ -164,6 +179,8 @@ import { NotFoundComponent } from './composants/error/not-found/not-found.compon
     MaterialModule,
     MatButtonModule,
     MatTableModule,
+
+
     // * MATERIAL IMPORTS
     MatSidenavModule,
     MatToolbarModule,
@@ -188,6 +205,9 @@ import { NotFoundComponent } from './composants/error/not-found/not-found.compon
     MatFormFieldModule,
     ChartsModule,
     NgApexchartsModule,
+
+    MatRadioModule,
+    MatGridListModule
 
 
   ],

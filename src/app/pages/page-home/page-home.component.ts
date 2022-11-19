@@ -3,14 +3,17 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Chart} from 'chart.js';
 
 import {ApexChart, ApexNonAxisChartSeries, ApexResponsive, ChartComponent} from "ng-apexcharts";
+import { Langage } from 'src/app/services/model/langage';
+import { DomainHttpService } from 'src/app/services/serviceApi/email/domain-http.service';
 import {ProcessorServiceService} from "../../services/serviceApi/processor/processor-service.service";
-import {Type} from "../../services/model/Type";
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
   chart: ApexChart;
   responsive: ApexResponsive[];
   labels: any;
+
+  listeOfLangage :Langage[];
 
 };
 
@@ -30,11 +33,24 @@ export class PageHomeComponent implements OnInit {
   nbStatusActif:number=0;
   nbStatusInactif:number=0;
 
-  constructor(private processorService:ProcessorServiceService) {
+  totalLength:number =0 ;
+  ListeOfLangage:Langage[];
+
+  constructor(private processorService:ProcessorServiceService,
+     private  domainHttpService :DomainHttpService
+
+
+    ) {
 
   }
 
   ngOnInit() {
+
+    this.domainHttpService.getLangages().subscribe((appo)=>{
+      this.ListeOfLangage = appo;
+      this.totalLength=appo.length;
+
+    })
     this.processorService.countProcessorType("FS").subscribe(nb=>{
       this.nbFS=nb
       console.log(nb)

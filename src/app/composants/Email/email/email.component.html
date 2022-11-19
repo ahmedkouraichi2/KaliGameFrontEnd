@@ -1,0 +1,77 @@
+
+<div  style="margin-bottom: 200px; margin-left:400px;" class="main-form">
+ <!--  <mat-card-title style="margin-top: 50px;margin-left:200px;" > <h2>Invitation</h2></mat-card-title> -->
+  <mat-card class="form-card" >
+    <mat-card-subtitle>Informations personnelles</mat-card-subtitle>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+          <input type="text" matInput [(ngModel)]="details.prenom" name="prenom"  placehlder="" />
+          <mat-error>Ce champ est requis</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input type="text" matInput [(ngModel)]="details.name" name="name" />
+        <mat-error>Ce champ est requis</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <mat-card class="form-card">
+    <mat-card-subtitle>Comment préférez vous être contacté ?</mat-card-subtitle>
+    <mat-radio-group >
+      <mat-radio-button  value="email">Mail</mat-radio-button>
+    </mat-radio-group>
+  </mat-card>
+
+
+  <mat-card class="form-card" >
+    <mat-card-subtitle>Email</mat-card-subtitle>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Adresse mail</mat-label>
+        <input type="text" matInput [(ngModel)]="details.email" name="email" />
+        <mat-error> {{ getFormControlErrorText(emailCtrl) }} </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirmer votre adresse mail</mat-label>
+        <input type="text" matInput  />
+        <mat-error> {{ getFormControlErrorText(confirmEmailCtrl)}} </mat-error>
+      </mat-form-field>
+    </div>
+    <small class="error-text" *ngIf="" >
+          Les deux emails  ne sont  pas identiques
+    </small>
+  </mat-card>
+
+
+
+
+
+ <mat-card class="form-card" >
+      <mat-label>Domaines</mat-label>
+      <mat-select  multiple [(ngModel)]="selectedQuarterList"
+                  (onSelect)="onItemSelect($event, true)"
+                 (onDeSelect)="onItemSelect($event, false)">
+      <mat-option *ngFor="let p of  quarterList " [value]="p">{{p.name}}</mat-option>
+      </mat-select>
+
+</mat-card>
+
+
+  <mat-card class="form-card">
+    <div class="form-row">
+
+         <button class="btn1" (click)="onRest()">Anuuler</button>
+         <button class="btn1"
+         (click)="onSubmit()"
+         mat-flat-button
+         color="primary"
+         [disabled]="loading"
+          >Envoyer
+        </button>
+
+    </div>
+  </mat-card>
+
+</div>

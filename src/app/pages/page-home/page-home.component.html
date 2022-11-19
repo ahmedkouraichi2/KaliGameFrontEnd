@@ -8,8 +8,8 @@
             <div class="d-flex align-items-center">
               <div>
                 <p class="mb-0 text-secondary">Nombre des Tests</p>
-                <!-- <h4 class="my-1 " style="color: #728e9b" >{{nbStatusTotal}}</h4> -->
-                <h4 class="my-1 " style="color: #728e9b" >3</h4>
+                <!-- <h4 class="my-1 " style="color: #728e9b" >{{totalLength}}</h4> -->
+                <h4 class="my-1 " style="color: #728e9b" >{{totalLength}}</h4>
               </div>
               <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i
                 class="fa fa-solid fa-filter"></i>
@@ -40,8 +40,8 @@
             <div class="d-flex align-items-center">
               <div>
                 <p class="mb-0 text-secondary">Nombre des Candidats</p>
-              <!--   <h4 class="my-1 text-warning"  >{{nbStatusInactif}}</h4> -->
-                <h4 class="my-1 text-warning"  >4</h4>
+              <!--   <h4 class="my-1 text-warning"  >totalLength</h4> -->
+                <h4 class="my-1 text-warning"  >{{totalLength}}</h4>
 
               </div>
               <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
@@ -58,7 +58,7 @@
       <div class="col justify-content-center">
         <div class="card radius-10 border-start border-0 border-3"  style="height: 95%">
           <div id="chart">
-            <p class="mb-0 text-secondary mt-3 mb-3" style="text-align: center">Décomposition des collecteurs</p>
+            <p class="mb-0 text-secondary mt-3 mb-3" style="text-align: center">Décomposition des domaines</p>
             <apx-chart  *ngIf="chartOptions"
               [series]="chartOptions.series!"
               [chart]="chartOptions.chart!"

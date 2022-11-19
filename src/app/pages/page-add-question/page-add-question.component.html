@@ -1,0 +1,88 @@
+<div class="dialog-header " style="align-items: center;display: flex;justify-content: space-between;">
+     <div>
+      <h2 mat-dialog-title class="dialog-header-text">Ajouter Question </h2>
+     </div>
+  <div>
+    
+    <a type="btn" (click)="onferme()" >
+      <img  alt="fermer" width="30px" height="30px" src="../../../assets/stop_close_off_14465.png" />
+     </a>
+  
+  </div>
+  
+</div>
+<mat-dialog-content class="mat-typography">
+
+  <mat-card class="form-card" >
+    <mat-card-subtitle>Question Sujet</mat-card-subtitle>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input type="text" style="width: 100%;" matInput [(ngModel)]="this.question.question">
+    </mat-form-field>
+
+
+    <div class="form-row">
+        <div appearance="fill" style="width: 100%;">
+          <mat-card-subtitle>Option</mat-card-subtitle>
+            <input type="text" style="width: 100%;"  matInput [(ngModel)]="option">
+          
+
+        </div>
+      
+    </div>
+
+
+
+    <button 
+  type="button"
+  style="float: left; border-color: aliceblue"
+  
+  class="btn btn-primary"
+  (click)="saveChoix()"
+
+>
+
+
+
+  <i class="glyphicon glyphicon-ok"></i>
+</button>
+<br /><br /><br />
+<fieldset *ngIf="this.question.choix.length > 0">
+  <legend style="text-align: center">Liste des options</legend>
+  <div style="margin-left: 27%">
+    <div *ngFor="let choix of question.choix; let index = index">
+      <span>
+        <input type="checkbox" id="{{ index }}" name="option{{ index }}" (change)="checkCheckBoxvalue($event, index)" />
+        <label style="min-width: 300px !important; font-size: 12px" for="{{ index }}">{{ choix.description }}</label>
+      </span>
+      <button type="button" class="btn btn-danger px-3" (click)="delete(index)" style="margin-left: 12px">
+        <i class="glyphicon glyphicon glyphicon glyphicon-remove"></i>
+      </button>
+
+
+    </div>
+  </div>
+</fieldset>
+
+<br /><br /><br /><br />
+<button
+  type="button"
+  style="margin-bottom: 10px; margin-left: 550px; border-color: aliceblue"
+  class="btn btn-primary"
+  [disabled]="this.question.choix.length < 2 && this.question != null && !checkResp()"
+  (click)="save()"
+>
+  Enregistrer
+</button>
+
+
+    
+     
+    
+  
+</mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="btn-style-cancel">Annuler</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn-style-add">Ajouter</button>
+</mat-dialog-actions>

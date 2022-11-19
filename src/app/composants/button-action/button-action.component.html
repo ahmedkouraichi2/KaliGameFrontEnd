@@ -6,33 +6,16 @@
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
     <span (click)="menuTrigger.closeMenu()">
-       <button mat-menu-item class="my-dropdown button-dropdown">
+       <button  type="button" mat-menu-item class="my-dropdown button-dropdown">
           <button  mat-button (click)="openDialogFs()" style="padding-left: 0px; padding-right: 0px;">
 <!--
-            <span class="material-icons">add_circle</span>
+
 -->
 &nbsp;&nbsp;          <i class="fa fa-duotone fa-file fa-lg"></i>&nbsp;
-            <span>FS</span>
+            <span>Ajouter un Domaine</span>
           </button>
         </button>
-        <button mat-menu-item class="my-dropdown button-dropdown">
-          <button  mat-button (click)="openDialogWeb()" style="padding-left: 0px; padding-right: 0px;">
-<!--
-            <span class="material-icons">add_circle</span>
--->
-&nbsp;&nbsp;          <i class="fa fa-duotone fa-globe fa-lg"></i>&nbsp;
-            <span>WEB</span>
-          </button>
-        </button>
-         <button mat-menu-item class="my-dropdown button-dropdown">
-          <button  mat-button (click)="openDialogBd()"  style="padding-left: 0px; padding-right: 0px;">
-<!--
-            <span class="material-icons">add_circle</span>
--->
-            &nbsp;<i class="fa  fa-duotone fa-database fa-lg"></i>&nbsp;
-            <span>BD</span>
-          </button>
-        </button>
+
     </span>
     </mat-menu>
   </div>

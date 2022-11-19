@@ -1,10 +1,10 @@
 .page {
   color: #262626;
   padding: 0 0.5rem;
-  #background: #f1f5f9;
+
   &__box {
     min-height: 77px;
-    background: #aabbc3;
+
     margin: 6px -1rem;
     font-size: 16px
   }
@@ -104,7 +104,7 @@ layout-column, .layout-row {
   background-color: #fffbe6 !important;
 }
 .mat-header-cell{
-  color: #ffffff;
+  color:white;
   font-size: 16px;
 
 
@@ -121,3 +121,11 @@ layout-column, .layout-row {
 .mat-sort-header-arrow {
   color: #ffffff !important;
 }
+
+th{
+  background-color:#838089;
+}
+
+
+
+

@@ -27,7 +27,10 @@ import {Commentaire} from "../../services/model/Commentaire";
 import { LangageServiceHttpService } from 'src/app/services/serviceApi/email/langage-service-http.service';
 import { DomainHttpService } from 'src/app/services/serviceApi/email/domain-http.service';
 import { Langage } from 'src/app/services/model/langage';
-
+import { Router } from '@angular/router';
+import { ModalComponent, ModalHeaderComponent } from 'ng-cdbangular';
+import { PageDeleteDomaineComponent } from 'src/app/pages/page-delete-domaine/page-delete-domaine.component';
+import {PageUpdateDomaineComponent} from 'src/app/pages/page-update-domaine/page-update-domaine.component';
 @Component({
   selector: 'app-table-connecor',
   templateUrl: './table-connecor.component.html',
@@ -35,42 +38,94 @@ import { Langage } from 'src/app/services/model/langage';
 })
 export class TableConnecorComponent implements OnInit,OnDestroy  {
 
+  numDomaine :Observable<number>;
+  listLangage: Langage[] = [];
+  displayedColumns: string[] = ['name', 'UPDATE/DELETE'];
+  dataSource = new MatTableDataSource<Langage>();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
-   domaines:Langage[]=[];
+
   private subs = new Subscription();
-  displayedColumns: string[] = ["id", "name", "actions"];
-  public dataSource: MatTableDataSource<Langage>;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   private dataArray:any;
-/*   currentUser: User;
-  newCollector = new Processor();
+  currentUser: User;
+  newDomaine = new Processor();
   newPlanification = new Planification();
   newPropriete = new Propriete();
   newReglage = new Reglage();
-  newCommentaire= new Commentaire(); */
-  constructor(private token: TokenStorageService,private langageServiceHttpService :LangageServiceHttpService,private domainHttpService : DomainHttpService,private _snackBar:MatSnackBar,public dialog: MatDialog) {
+  newCommentaire= new Commentaire();
+  constructor(private token: TokenStorageService,private langageServiceHttpService :LangageServiceHttpService,private domainHttpService : DomainHttpService,private _snackBar:MatSnackBar,public dialog: MatDialog,private router:Router) {
 
   }
-  ngOnInit(): void {
-
-    this.subs.add(this.domainHttpService.getLangages()
-      .subscribe((res)=>{
-        this.dataArray=res;
-        console.log(this.dataArray);
-        this.dataSource=new MatTableDataSource<Langage>(this.dataArray);
-        this.dataSource.paginator=this.paginator;
-        this.dataSource.sort=this.sort;
-      },(err:HttpErrorResponse)=>{
-        console.log(err);
-      }))
-
-  }
-
   ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
+  ngOnInit() {
 
-     
+    const newLocal = this;
+    this.dataSource.filterPredicate = function (data, filter: string): boolean {
+      return data.name.toLowerCase().includes(filter) || data.name.toLowerCase().includes(filter);
+    };
+    this.domainHttpService.getLangages().subscribe((res: any) => {
+      this.listLangage = res;
+      console.log(this.listLangage);
+      this.dataSource.data = this.listLangage;
+    });
+  }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  add() {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      height: '450px',
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.ngOnInit();
+      this.ngAfterViewInit();
+    });
+  }
+
+  delete(id) {
+    console.log(id);
+
+    const dialogRef = this.dialog.open(PageDeleteDomaineComponent, {
+      height: '200px',
+      width: '600px',
+      data: { id: id, service: 'QuestionListComponent' },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.ngOnInit();
+      this.ngAfterViewInit();
+    });
+  }
+
+  edit(id, name) {
+    let langage = new Langage(id, name);
+    console.log(langage);
+    const dialogRefEdit = this.dialog.open(PageUpdateDomaineComponent , {
+      height: '200',
+      width: '600px',
+      data: { lg: langage },
+    });
+
+    dialogRefEdit.afterClosed().subscribe((result) => {
+      this.ngOnInit();
+      this.ngAfterViewInit();
+    });
+  }
+  toQuestions(id) {
+    this.domainHttpService.id = id;
+    this.router.navigate(['/dashboard/question/1']);
   }
 
 }
+
+

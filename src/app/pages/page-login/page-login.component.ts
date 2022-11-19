@@ -66,29 +66,31 @@ export class PageLoginComponent implements OnInit {
   onSubmit(): void {
 
 
- /*    const { email, password } = this.form;
+   const { email, password } = this.form;
     this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.token.toString());
-        console.log('login'+data.token);
+        console.log('login Ahmed'+data.token.toString());
+        alert(data.token);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.router.navigate(["/dashboard/home"]).then();
         this.roles = this.tokenStorage.getUser().role;
-        console.log(this.tokenStorage.getUser())
+        console.log(this.tokenStorage.getUser());
+        console.log("ahmedConnected");
       },
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
-    ); */
+    ); 
 
 
     this.router.navigate(["/dashboard/home"]) }
 
   reloadPage(): void {
-    window.sessionStorage.clear();
+  
   }
 }
 

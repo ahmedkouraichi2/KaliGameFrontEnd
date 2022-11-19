@@ -1,0 +1,54 @@
+.button {
+  background: #eaeef0;
+  color: #004849;
+  font-family: Montserrat bold !important;
+  font-size: 18px;
+  }
+button:hover{
+  color: #004849;
+}
+.button-dropdown {
+  background: transparent;
+  color: #004849;
+}
+button-dropdown:hover{
+  color: #004849;
+}
+.dialog-header {
+  background-color: rgb(114, 142, 155);
+}
+.dialog-header-text {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: bold;
+  line-height: 56px;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+}
+.modal-dialog {
+  max-width: 760px;
+}
+
+.modal-dialog {
+  max-width: 760px;
+  margin: 1.75rem auto;
+}
+.link-danger {
+  color: rgb(114, 142, 155);
+}
+.link-danger:hover{
+  color: rgb(0, 72, 73);
+}
+.mat-row.hovered {
+  background: #eee;
+}
+
+.mat-row.highlighted {
+  background: #999;
+}
+
+button:not(:disabled) {
+  background-color: transparent !important;
+}

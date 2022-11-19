@@ -1,10 +1,11 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
   <div class="card card-container">
-   <!-- <img
+   <img
+     alt="imageLogo"
       id="profile-img"
       src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
       class="profile-img-card"
-    />-->
+         />
     <form
       *ngIf="!isSuccessful"
       name="form"
@@ -13,9 +14,7 @@
       novalidate
     >
       <div class="form-group">
-<!--
-        <label for="firstName">Username</label>
--->
+
         <label >First Name</label>
         <input
           type="text"
@@ -60,9 +59,7 @@
         </div>
       </div>
       <div class="form-group">
-<!--
-        <label for="email">Email</label>
--->
+
         <label >Email</label>
         <input
           type="email"
@@ -81,9 +78,7 @@
         </div>
       </div>
       <div class="form-group">
-<!--
-        <label for="password">Password</label>
--->
+
         <label >Password</label>
         <input
           type="password"
@@ -113,3 +108,58 @@
     </div>
   </div>
 </div>
+ -->
+
+
+
+
+
+
+
+
+ <mat-card class="form-card">
+  <mat-card-subtitle>Informations personnelles</mat-card-subtitle>
+  <div class="form-row">
+      <mat-form-field appearance="fill">
+          <mat-label>Prénom</mat-label>
+          <input type="text" matInput >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input type="text" matInput >
+      </mat-form-field>
+  </div>
+</mat-card>
+
+<mat-card class="form-card" >
+  <mat-card-subtitle>Email</mat-card-subtitle>
+  <div class="form-row">
+      <mat-form-field appearance="fill">
+          <mat-label>Adresse mail</mat-label>
+          <input type="text" matInput >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Confirmer votre adresse mail</mat-label>
+          <input type="text" matInput >
+      </mat-form-field>
+  </div>
+</mat-card>
+
+
+<mat-card class="form-card" >
+  <mat-card-subtitle>Informations de connexion</mat-card-subtitle>
+  <mat-form-field appearance="fill">
+      <mat-label>Nom d'utilisateur</mat-label>
+      <input type="text" matInput>
+  </mat-form-field>
+  <div class="form-row">
+      <mat-form-field appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input type="password" matInput >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Confirmer votre mot de passe</mat-label>
+          <input type="password" matInput >
+      </mat-form-field>
+  </div>
+</mat-card>

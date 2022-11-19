@@ -1,0 +1,31 @@
+.code-block--raw-code {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border-radius: 2px;
+  background-clip: padding-box;
+  padding: 5px 5px 5px 29px;
+  margin: 0;
+  outline: 0;
+  border: 1px solid #000;
+  background-color: rgba(73, 68, 68, 0.815);
+  font-family: Monaco,Menlo,'Ubuntu Mono',Consolas,source-code-pro,'Droid Sans Mono',monospace;
+  font-size: .625rem;
+  line-height: 1.5;
+}
+
+.full-width{
+  width:100%;
+}
+
+.flex-titre{
+  display:flex;
+  align-items:center;
+  justify-content:center
+
+}

@@ -5,15 +5,16 @@ export const navbardata=[
     label:'Accueil'
   },
   {
-    routeLink:'connectors',
-    icon:'fa fa-envelope ',
-    label:'Invite'
-  },
-  {
-    routeLink:'setting',
+    routeLink:'domaines',
     icon:'fa fa-duotone fa-gears ',
     label:'Gestions'
   },
+  {
+    routeLink:'usersKaligame',
+    icon:'fa fa-users ',
+    label:'Utilisateur'
+  },
+
   {
     routeLink:'help',
     icon:'fa fa-duotone fa-circle-question',
@@ -27,7 +28,7 @@ export const navbardata=[
   {
     routeLink:'collection',
     icon:'fa fa-duotone fa-clipboard-list',
-    label:'Collections'
+    label:'Email'
   },
   {
     routeLink:'logout',
