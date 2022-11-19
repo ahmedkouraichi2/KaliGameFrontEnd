@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fe59a11e-1adb-498b-805f-123ae7fc1840" name="Changes" comment="modification collector&#10;front collecteur des données">
+      <change beforePath="$PROJECT_DIR$/../securite/data/collecteurs.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../securite/data/collecteurs.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../securite/src/main/java/com/example/securite/Contoller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../securite/src/main/java/com/example/securite/Contoller/AuthController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25VsrEvpoDg4kE6ii3DEAdbvpj7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/pages" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="ts.external.directory.path" value="D:\front-app-collecte-donnees\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\front-app-collecte-donnees\src\app\pages" />
+      <recent name="D:\front-app-collecte-donnees\src\app\composants\table-modal-processor" />
+      <recent name="D:\front-app-collecte-donnees\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\front-app-collecte-donnees\src\app\services\serviceApi" />
+      <recent name="D:\front-app-collecte-donnees\src\app\pages\features\model" />
+      <recent name="D:\front-app-collecte-donnees\src\app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe59a11e-1adb-498b-805f-123ae7fc1840" name="Changes" comment="" />
+      <created>1645623804275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645623804275</updated>
+      <workItem from="1645623837671" duration="7319000" />
+      <workItem from="1645689818743" duration="18516000" />
+      <workItem from="1645727271930" duration="8606000" />
+      <workItem from="1645777828141" duration="13136000" />
+      <workItem from="1645873441693" duration="2826000" />
+      <workItem from="1645887729353" duration="6261000" />
+      <workItem from="1645900103993" duration="13062000" />
+      <workItem from="1645968442220" duration="17971000" />
+      <workItem from="1646034569289" duration="18862000" />
+      <workItem from="1646078143946" duration="5243000" />
+      <workItem from="1646123269933" duration="38279000" />
+      <workItem from="1646207941897" duration="22495000" />
+      <workItem from="1646246835622" duration="7912000" />
+      <workItem from="1646294919196" duration="16686000" />
+      <workItem from="1646341827429" duration="6350000" />
+      <workItem from="1646385940988" duration="6844000" />
+      <workItem from="1646577460123" duration="17844000" />
+      <workItem from="1646639712153" duration="24143000" />
+      <workItem from="1646725367400" duration="23660000" />
+      <workItem from="1646766194951" duration="7901000" />
+      <workItem from="1646812496696" duration="26294000" />
+      <workItem from="1646854513291" duration="11682000" />
+      <workItem from="1646898092144" duration="22902000" />
+      <workItem from="1646985314163" duration="13991000" />
+      <workItem from="1647095446459" duration="12081000" />
+      <workItem from="1647188967318" duration="14083000" />
+      <workItem from="1647244537868" duration="100000" />
+      <workItem from="1647247217776" duration="14888000" />
+      <workItem from="1647331391648" duration="25399000" />
+      <workItem from="1647417562980" duration="23400000" />
+      <workItem from="1647458999106" duration="9756000" />
+      <workItem from="1647503014381" duration="18025000" />
+      <workItem from="1647594352180" duration="27000" />
+      <workItem from="1649063565356" duration="31163000" />
+      <workItem from="1649233995322" duration="10075000" />
+      <workItem from="1649250842801" duration="2574000" />
+      <workItem from="1649321046899" duration="9225000" />
+      <workItem from="1649339803725" duration="3409000" />
+      <workItem from="1649408103483" duration="1692000" />
+      <workItem from="1649415317192" duration="9729000" />
+      <workItem from="1649461544231" duration="8006000" />
+      <workItem from="1649581287245" duration="16859000" />
+      <workItem from="1649666408165" duration="31842000" />
+      <workItem from="1649844021129" duration="7162000" />
+      <workItem from="1649928061983" duration="1314000" />
+      <workItem from="1649950416618" duration="1988000" />
+      <workItem from="1650018649145" duration="390000" />
+      <workItem from="1650019143363" duration="594000" />
+      <workItem from="1650112630768" duration="1200000" />
+      <workItem from="1650271144754" duration="5551000" />
+      <workItem from="1650358418265" duration="1286000" />
+      <workItem from="1650409076116" duration="185000" />
+      <workItem from="1650448713150" duration="5515000" />
+      <workItem from="1650707734979" duration="1724000" />
+      <workItem from="1650880830817" duration="2518000" />
+      <workItem from="1650964854544" duration="19215000" />
+      <workItem from="1651050704801" duration="7637000" />
+      <workItem from="1651569952750" duration="6602000" />
+      <workItem from="1652112104566" duration="131000" />
+      <workItem from="1652540373800" duration="559000" />
+      <workItem from="1652690755790" duration="20896000" />
+      <workItem from="1652726376946" duration="1976000" />
+      <workItem from="1652776122797" duration="18165000" />
+      <workItem from="1652860858083" duration="22187000" />
+      <workItem from="1652947957400" duration="15858000" />
+      <workItem from="1652981006308" duration="4220000" />
+      <workItem from="1653034092351" duration="15921000" />
+      <workItem from="1653060689623" duration="119000" />
+      <workItem from="1653068392276" duration="3528000" />
+      <workItem from="1653117933141" duration="17000" />
+      <workItem from="1653123689089" duration="7144000" />
+      <workItem from="1653296344600" duration="591000" />
+      <workItem from="1653303394986" duration="100000" />
+      <workItem from="1653310052849" duration="12953000" />
+      <workItem from="1653327967646" duration="9273000" />
+      <workItem from="1653380614920" duration="21349000" />
+      <workItem from="1653416703207" duration="10365000" />
+      <workItem from="1653466415187" duration="9475000" />
+      <workItem from="1653505601876" duration="1782000" />
+      <workItem from="1653552864609" duration="19225000" />
+      <workItem from="1653639168202" duration="19297000" />
+      <workItem from="1653735973598" duration="3144000" />
+      <workItem from="1653897582502" duration="21010000" />
+      <workItem from="1653945145580" duration="20085000" />
+      <workItem from="1654071769962" duration="3238000" />
+      <workItem from="1654157509266" duration="15592000" />
+      <workItem from="1654245648656" duration="612000" />
+      <workItem from="1654249539448" duration="8464000" />
+      <workItem from="1654523527749" duration="7483000" />
+      <workItem from="1654589823818" duration="23614000" />
+      <workItem from="1654675973875" duration="21025000" />
+      <workItem from="1654706866574" duration="382000" />
+      <workItem from="1654762124792" duration="5158000" />
+      <workItem from="1655549501424" duration="3403000" />
+      <workItem from="1656429839246" duration="1164000" />
+      <workItem from="1656490844362" duration="16481000" />
+      <workItem from="1656531714599" duration="1611000" />
+      <workItem from="1656577154314" duration="16377000" />
+      <workItem from="1656610791779" duration="568000" />
+      <workItem from="1656665588595" duration="14110000" />
+      <workItem from="1656770701803" duration="345000" />
+      <workItem from="1656840834292" duration="1370000" />
+      <workItem from="1656922958602" duration="14653000" />
+      <workItem from="1657018014797" duration="1173000" />
+      <workItem from="1657058327430" duration="3406000" />
+      <workItem from="1657132287554" duration="1914000" />
+    </task>
+    <task id="LOCAL-00001" summary="modification collector&#10;front collecteur des données">
+      <created>1657019086484</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019086484</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="modification collector" />
+    <MESSAGE value="modification collector&#10;front collecteur des données" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification collector&#10;front collecteur des données" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/composants/header-body/header-body.component.html</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
