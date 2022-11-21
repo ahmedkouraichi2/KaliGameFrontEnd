@@ -1,0 +1,8 @@
+<h3 class="mb-20">Liste des Regles</h3>
+<ul class="mb-20 list-primary">
+	<li 
+    (click)="selectRegle(index)"
+		*ngFor="let regle of regles; let index = index">
+		{{ regle.name }}
+	</li>
+</ul>

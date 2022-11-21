@@ -97,6 +97,9 @@ import { PageUpdateDomaineComponent } from './pages/page-update-domaine/page-upd
 import { PageQuestionQuizComponent } from './pages/page-question-quiz/page-question-quiz.component';
 import { PageAddQuestionComponent } from './pages/page-add-question/page-add-question.component';
 import { ButtonActionQuestionComponent } from './composants/button-action-question/button-action-question.component';
+import { TutoComponent } from './composants/regles/tuto/tuto.component';
+import { TutoDeatilsComponent } from './composants/regles/tuto/tuto-deatils/tuto-deatils.component';
+import { TutoListComponent } from './composants/regles/tuto/tuto-list/tuto-list.component';
 
 
 @NgModule({
@@ -106,6 +109,7 @@ import { ButtonActionQuestionComponent } from './composants/button-action-questi
     PageInscriptionComponent,
     PageDashboardComponent,
     PageHomeComponent,
+    TutoDeatilsComponent,
 
 
     PageConteneurComponent,
@@ -163,7 +167,10 @@ import { ButtonActionQuestionComponent } from './composants/button-action-questi
     PageUpdateDomaineComponent,
     PageQuestionQuizComponent,
     PageAddQuestionComponent,
-    ButtonActionQuestionComponent
+    ButtonActionQuestionComponent,
+    TutoComponent,
+    TutoListComponent,
+    
 
 
 

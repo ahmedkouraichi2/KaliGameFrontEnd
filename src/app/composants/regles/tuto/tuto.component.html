@@ -1,0 +1,58 @@
+<head>
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<form>
+  <div class="grid-container">
+    <mat-grid-list cols="2" rowHeight="350px">
+     
+        <mat-card style="box-shadow: #8A2BE2	 0px 2px 23px 0px;"
+         class="card" id="card1" style="display:flex;align-item:center;justify-centent:center">
+          <div class="card-header">
+            <div class="container-img-texte">
+
+                 <img alt="logo" src="../../../../assets/logo.png" id="img" />
+
+            </div>
+            <div>
+                <h2>
+                  Une nouvelle façon d'evaluation
+                </h2>
+            </div>
+          </div>
+          <div class="card-body" >
+            <div class="container d-flex flex-row">
+                  <div class="container d-flex flex-row">
+                    <app-tuto-list 
+                    
+                    [regles]="regles"
+
+               
+
+                    [selectedRegle]="selectedRegle"
+
+                    (changeRegle)="selectCocktail($event)"
+
+                   >
+                       
+                        class="flex-50 pr-10"></app-tuto-list>
+                    <app-tuto-deatils  
+                        class="flex-50 pl-10"
+                        [regle]="selectedRegle"  ></app-tuto-deatils>
+                  </div>
+
+                    
+
+
+            </div>
+
+          
+          </div>
+        </mat-card>
+    
+    
+
+    
+    </mat-grid-list>
+  </div>
+</form>
