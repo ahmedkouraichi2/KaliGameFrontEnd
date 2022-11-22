@@ -52,7 +52,7 @@ export class DashbordExamComponent implements OnInit {
   }
 
   submitLoading(){
-    this.router.navigate(['/loading']);
+    this.router.navigate(['/regles']);
 
   }
 

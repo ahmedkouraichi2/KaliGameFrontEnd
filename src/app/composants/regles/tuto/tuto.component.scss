@@ -23,7 +23,7 @@
   height: 50px;
   margin: 4px 2px;
   margin-top: 20px;
-  
+
 }
 
 .button1 {
@@ -38,7 +38,7 @@
   width: 250px;
   height: 50px;
 }
- 
+
 #card1 {
   height: 600px;
   width: 600px;
@@ -96,3 +96,43 @@ span {
   margin-left: 20px;
 }
  */
+
+
+ .button-demmarage {
+  background-color: #069fa9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 250px;
+  height: 50px;
+  margin: 4px 2px;
+  margin-top: 20px;
+
+}
+.flexo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#gauche{
+	width:50%;
+	float:left;
+
+	margin:0;
+}
+
+#droite{
+	float:right;
+	background-color:
+white;
+	width:50%;
+	margin:0;
+}
+.lol{
+  margin-top: 100px;
+ }

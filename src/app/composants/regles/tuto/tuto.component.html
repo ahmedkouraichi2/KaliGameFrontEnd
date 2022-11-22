@@ -5,10 +5,10 @@
 <form>
   <div class="grid-container">
     <mat-grid-list cols="2" rowHeight="350px">
-     
+
         <mat-card style="box-shadow: #8A2BE2	 0px 2px 23px 0px;"
          class="card" id="card1" style="display:flex;align-item:center;justify-centent:center">
-          <div class="card-header">
+          <div class="card-header flexo">
             <div class="container-img-texte">
 
                  <img alt="logo" src="../../../../assets/logo.png" id="img" />
@@ -20,39 +20,61 @@
                 </h2>
             </div>
           </div>
-          <div class="card-body" >
+
+        </mat-card>
+        <mat-card>
+
+<!--
             <div class="container d-flex flex-row">
-                  <div class="container d-flex flex-row">
-                    <app-tuto-list 
-                    
-                    [regles]="regles"
+              <div class="container d-flex flex-row">
+                      <app-tuto-list
+                      [regles]="regles"
+                      [selectedRegle]="selectedRegle"
+                      (changeRegle)="selectCocktail($event)">
+                    </app-tuto-list>
 
-               
 
-                    [selectedRegle]="selectedRegle"
+                    <app-tuto-deatils
+                    class="flex-50 pl-10"
+                    [regle]="selectedRegle">
+                   </app-tuto-deatils>
+              </div>
 
-                    (changeRegle)="selectCocktail($event)"
+           </div> -->
 
-                   >
-                       
-                        class="flex-50 pr-10"></app-tuto-list>
-                    <app-tuto-deatils  
-                        class="flex-50 pl-10"
-                        [regle]="selectedRegle"  ></app-tuto-deatils>
-                  </div>
+         <div class="lol">
 
-                    
+            <div id="gauche">
+              <app-tuto-list
+              [regles]="regles"
+              [selectedRegle]="selectedRegle"
+              (changeRegle)="selectCocktail($event)">
+              </app-tuto-list>
 
 
             </div>
+            <div id="droite">
+              <app-tuto-deatils
+              class="flex-50 pl-10"
+              [regle]="selectedRegle">
+             </app-tuto-deatils>
+            </div>
 
-          
-          </div>
+         </div>
+
+
+
         </mat-card>
-    
-    
 
-    
+
+
+
     </mat-grid-list>
+  </div>
+
+  <div>
+    <button class="button-demmarage">
+      test
+  </button>
   </div>
 </form>
