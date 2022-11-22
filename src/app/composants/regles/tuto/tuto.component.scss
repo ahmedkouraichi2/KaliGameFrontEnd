@@ -119,20 +119,34 @@ span {
   justify-content: space-between;
 }
 
-#gauche{
-	width:50%;
-	float:left;
 
-	margin:0;
-}
-
-#droite{
-	float:right;
-	background-color:
-white;
-	width:50%;
-	margin:0;
-}
 .lol{
   margin-top: 100px;
  }
+
+
+ .grand {
+	margin: 0;
+	padding: 0;
+
+}
+
+
+
+.gauche {
+	width: 40%;
+	height: 100%;
+	float: left;
+
+margin-top: 50px;
+margin-left: 30px;
+}
+
+.droite {
+	width: 40%;
+	height: 100%;
+	float: left;
+	
+margin-top: 50px;
+margin-left: 30px;
+}
