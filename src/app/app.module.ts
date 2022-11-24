@@ -100,6 +100,7 @@ import { ButtonActionQuestionComponent } from './composants/button-action-questi
 import { TutoComponent } from './composants/regles/tuto/tuto.component';
 import { TutoDeatilsComponent } from './composants/regles/tuto/tuto-deatils/tuto-deatils.component';
 import { TutoListComponent } from './composants/regles/tuto/tuto-list/tuto-list.component';
+import { FinirComponent } from './composants/finir/finir.component';
 
 
 @NgModule({
@@ -170,6 +171,7 @@ import { TutoListComponent } from './composants/regles/tuto/tuto-list/tuto-list.
     ButtonActionQuestionComponent,
     TutoComponent,
     TutoListComponent,
+    FinirComponent,
     
 
 

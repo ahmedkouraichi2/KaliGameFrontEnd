@@ -23,6 +23,7 @@ import { QuestionExamComponent } from './composants/Exam/question-exam/question-
 import { MerciComponent } from './composants/Exam/merci/merci.component';
 import { PageQuestionQuizComponent } from './pages/page-question-quiz/page-question-quiz.component';
 import { TutoComponent } from './composants/regles/tuto/tuto.component';
+import { FinirComponent } from './composants/finir/finir.component';
 
 const routes: Routes = [
 
@@ -52,6 +53,12 @@ const routes: Routes = [
     path:'MerciComponent',
     component:MerciComponent
   },
+
+  {
+    path:'finir',
+    component:FinirComponent
+  },
+  
 
 
   {
